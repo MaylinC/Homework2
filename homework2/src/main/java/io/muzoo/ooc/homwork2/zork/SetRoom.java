@@ -2,7 +2,6 @@ package io.muzoo.ooc.homwork2.zork;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 
 public class SetRoom {    //set
 
@@ -16,21 +15,14 @@ public class SetRoom {    //set
 
     public String getDescription() { return description; }
 
-    private HashMap <String,SetRoom> setDirectionMap = new HashMap<>(); {  //put the direction as a keys and neighbor room as a value
+    private HashMap <String,String> setDirectionMap = new HashMap<>();
 
-        setDirectionMap.put("south", null);
-        setDirectionMap.put("north", null);
-        setDirectionMap.put("east", null);
-        setDirectionMap.put("west", null);
+    public void setWay(String direction, String neighbor ) {
 
-    }
-
-    public void setWay(String direction, SetRoom neighbor ) {
         setDirectionMap.put(direction, neighbor);
     }
 
-    public SetRoom getNeighbor(String neighbor) { return setDirectionMap.get(neighbor); }
-
+    public String getNeighbor(String direction) { return setDirectionMap.get(direction); }
 
     public static void main(String[] args) throws IOException {
 
