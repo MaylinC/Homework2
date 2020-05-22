@@ -1,5 +1,6 @@
-package io.muzoo.ooc.homwork2.zork;
+package io.muzoo.ooc.homwork2.zork.creatures;
 
+import io.muzoo.ooc.homwork2.zork.GetProperties;
 import sun.nio.cs.ext.IBM037;
 
 public class Monsters implements GetProperties {   /// monster and boss
@@ -8,7 +9,8 @@ public class Monsters implements GetProperties {   /// monster and boss
     private Integer location; // where is the monster
     private Integer attack;
     private Integer defence;
-    private final String description;
+    private Integer MaxHp;
+    private String description;
 
     public Monsters(Integer hp, Integer attack, Integer defence, String description) {
 
@@ -38,11 +40,11 @@ public class Monsters implements GetProperties {   /// monster and boss
         return this.defence;
     }
 
+    @Override
+    public Integer getMaxHp() { return this.MaxHp; }
+
     public String getDescription(String name) {
         return this.description;
     }
 
-    public static void main(String[] args) {
-
-    }
 }

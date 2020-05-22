@@ -5,4 +5,5 @@ public interface GetProperties {
     Integer getAttack();
     Integer getLocation();
     Integer getDefence();
+    Integer getMaxHp();
 }
