@@ -6,25 +6,22 @@ public class Inventory {
 
     private ArrayList<WizardFuryTruffle> bag;
     private Integer countMushroom;
-    private WizardFuryTruffle mushroom;
-
 
     public Inventory() {
         bag = new ArrayList<>();
         countMushroom = 0;
     }
 
-    public Inventory(ArrayList<WizardFuryTruffle> bag){
+    public Inventory(ArrayList<WizardFuryTruffle> bag) {
         this.bag = bag;
     }
 
-    public void displayInventory (ArrayList<WizardFuryTruffle> bag) {
-        for (WizardFuryTruffle item : bag) {
-            System.out.println(item);
-        }
+    public void displayInventory() {
+        System.out.println("Wizard's Fury Truffle = " + countMushroom.toString());
     }
 
-    public void addMushroom(WizardFuryTruffle mushroom) {
+
+    public void takeMushroom(WizardFuryTruffle mushroom) {
         countMushroom += 1;
         bag.add(mushroom);
         System.out.println("You have added a healing mushroom in your bag");
@@ -32,36 +29,30 @@ public class Inventory {
 
     public void dropMushroom() {
         boolean emp = bag.isEmpty();
-        if (!emp){
-            bag.remove(bag.size()-1);
+        if (!emp) {
+            bag.remove(bag.size() - 1);
             countMushroom -= 1;
-        }
-        else {
+        } else {
             System.out.println("Your bag is empty, mushroom can't be remove!! (Get more Mushrooms)");
         }
     }
 
-    public Integer getCountMushroom(){
+    public Integer getCountMushroom() {
         return countMushroom;
     }
 
-    public Integer getMushroom(){
-
-        mushroom = new WizardFuryTruffle();
+    public Integer getMushroom() {
         boolean emp = bag.isEmpty();
-        if (!emp){
-            bag.get(bag.size()-1);
+        if (!emp) {
+            WizardFuryTruffle mushroom = bag.get(bag.size() - 1);
             countMushroom -= 1;
+            bag.remove(bag.size() - 1);
+            return mushroom.getHealHP();
 
-
-
-        }
-        else {
-
+        } else {
+            System.out.println("Your bag is empty, can't get mushroom !! (Get more Mushrooms)");
+            return 0;
         }
     }
-
-
-
-
 }
+

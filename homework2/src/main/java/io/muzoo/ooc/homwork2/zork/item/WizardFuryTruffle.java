@@ -5,11 +5,11 @@ public class WizardFuryTruffle {
     private Integer healHP = 8;
     private String name = "Wizard's Fury Truffle";
 
-    private String getName(){
+    public String getName(){
         return name;
     }
 
-    private Integer getHealHP(){
+    public Integer getHealHP(){
         return healHP;
     }
 }

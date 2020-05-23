@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="042d62ac-5a4a-405e-af4c-a9bbe32959dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Participants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Participants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Knife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Knife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/WizardFuryTruffle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/WizardFuryTruffle.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +190,7 @@
       <workItem from="1590126601893" duration="8223000" />
       <workItem from="1590144482840" duration="375000" />
       <workItem from="1590144940173" duration="9668000" />
-      <workItem from="1590211334421" duration="20948000" />
+      <workItem from="1590211334421" duration="21870000" />
     </task>
     <task id="LOCAL-00001" summary="hw2">
       <created>1590222633026</created>
@@ -214,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590227912477</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="hw2">
+      <created>1590233672924</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590233672924</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

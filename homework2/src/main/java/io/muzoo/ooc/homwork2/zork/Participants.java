@@ -77,8 +77,4 @@ public class Participants implements GetProperties {
         System.out.println("You have found the strongest Armor suit in the realm -IronBattleArmor-, your defence have increase");
         this.defence += armor.getGainDefence() ;
     }
-
-
-
-
 }
