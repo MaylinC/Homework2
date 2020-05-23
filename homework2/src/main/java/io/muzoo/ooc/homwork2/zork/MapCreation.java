@@ -26,13 +26,13 @@ public class MapCreation {
 
         while ((line = bufferedReader.readLine()) != null) {
             String currentRoom = line.split(":")[0];
-            System.out.println(currentRoom);
             String roomDescription = line.split(":")[1].split("-")[0];
             String[] separateNeigh = line.split(":")[1].split("-")[1].split(",");
             SetRoom tmp = new SetRoom(roomDescription);
             for(int inx = 0; inx < separateNeigh.length; inx++) {
                 if (!separateNeigh[inx].equals("#")) {
                     if (inx == 0) {
+                        System.out.println(separateNeigh[inx]);
                         tmp.setWay("North", separateNeigh[0]);
                     }
                     if (inx == 1) {
