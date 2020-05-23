@@ -2,26 +2,18 @@ package io.muzoo.ooc.homwork2.zork.item;
 
 public class Knife {
 
-    private Integer attackDestruction;
+    private Integer attackDestruction = 15;
+    private String name = "Knife Saver";
 
-
-    public Knife() {
-        attackDestruction = 15;
+    public String getName() {
+        return name;
     }
 
     public Knife(Integer attackDestruction) {
-
         this.attackDestruction=attackDestruction;
     }
 
     public Integer getAttackDestruction() {
         return attackDestruction;
     }
-
-//    public static void main(String[] args) {
-//        Sword sword = new Sword();
-//        System.out.println(sword.getAttackDestruction());
-//
-//    }
-
 }

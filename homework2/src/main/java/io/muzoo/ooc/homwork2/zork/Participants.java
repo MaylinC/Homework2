@@ -29,6 +29,12 @@ public class Participants implements GetProperties {
         this.inventory = new Inventory();
     }
 
+    public Participants(Integer hp, Integer attack, Integer defence) {
+        this.hp = hp;
+        this.attack = attack;
+        this.defence = defence;
+    }
+
     @Override
     public Integer getHp() {
         return this.hp;
@@ -53,12 +59,16 @@ public class Participants implements GetProperties {
     public void setFoundStone() {
         boolean boo = resurrectionStone.getBooFound();
         boo = true;
-        this.hp = maxHp;
+        System.out.println("Now you have found one of the third object -Resurrection Stone- you have gain extra more HP");
+        this.hp += resurrectionStone.getGainHp();
     }
 
     public void setFoundSword() {
         boolean boo = excaliburSword.getBooFound();
         boo = true;
-        this.attack = 50;
+        System.out.println("Now you have found the most powerful sword -Sword of Excalibur- you can use this to defeat the boss");
+        this.attack = excaliburSword.getAttackDamage();
     }
+
+
 }

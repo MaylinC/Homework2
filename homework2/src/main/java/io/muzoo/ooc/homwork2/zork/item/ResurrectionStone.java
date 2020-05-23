@@ -2,19 +2,21 @@ package io.muzoo.ooc.homwork2.zork.item;
 
 public class ResurrectionStone {
 
-    private String name;
     private boolean foundStone;
+    private Integer gainHp;
 
     public ResurrectionStone() {
         foundStone = false;
-        name = "Resurrection Stone";
-    }
+        gainHp = 250;
 
-    public String getName(){
-        return name;
+    }
+    public ResurrectionStone(boolean foundStone) {
+        this.foundStone = foundStone;
     }
 
     public boolean getBooFound() {
         return foundStone;
     }
+
+    public Integer getGainHp() {return gainHp;}
 }
