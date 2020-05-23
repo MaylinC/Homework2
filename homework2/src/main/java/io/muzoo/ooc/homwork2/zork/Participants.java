@@ -1,15 +1,11 @@
 package io.muzoo.ooc.homwork2.zork;
 
-import io.muzoo.ooc.homwork2.zork.item.ExcaliburSword;
-import io.muzoo.ooc.homwork2.zork.item.Inventory;
-import io.muzoo.ooc.homwork2.zork.item.Knife;
-import io.muzoo.ooc.homwork2.zork.item.ResurrectionStone;
+import io.muzoo.ooc.homwork2.zork.item.*;
 
 public class Participants implements GetProperties {
 
     private Integer hp;
     private Integer maxHp;
-    private Inventory statScore;
     private Integer currentLocation;
     private Integer attack;
     private Integer defence;
@@ -17,6 +13,7 @@ public class Participants implements GetProperties {
     private Inventory inventory;
     private ResurrectionStone resurrectionStone;
     private ExcaliburSword excaliburSword;
+    private IronBattleArmor armor;
 
     public Participants() {
         this.hp = 100;
@@ -54,7 +51,11 @@ public class Participants implements GetProperties {
         return this.defence;
     }
 
-    public Knife seeWeapon() { return this.knife; }
+    public Integer getKnife() { return knife.getAttackDestruction(); }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
 
     public void setFoundStone() {
         boolean boo = resurrectionStone.getBooFound();
@@ -67,8 +68,17 @@ public class Participants implements GetProperties {
         boolean boo = excaliburSword.getBooFound();
         boo = true;
         System.out.println("Now you have found the most powerful sword -Sword of Excalibur- you can use this to defeat the boss");
-        this.attack = excaliburSword.getAttackDamage();
+        this.attack += excaliburSword.getAttackDamage();
     }
+
+    public void setFoundArmor() {
+        boolean boo = armor.getBooFound();
+        boo = true;
+        System.out.println("You have found the strongest Armor suit in the realm -IronBattleArmor-, your defence have increase");
+        this.defence += armor.getGainDefence() ;
+    }
+
+
 
 
 }

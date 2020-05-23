@@ -2,8 +2,14 @@ package io.muzoo.ooc.homwork2.zork.item;
 
 public class Knife {
 
-    private Integer attackDestruction = 15;
-    private String name = "Knife Saver";
+    private Integer attackDestruction;
+    private String name;
+
+    public Knife() {
+        attackDestruction = 15;
+        name = "Knife Saver";
+
+    }
 
     public String getName() {
         return name;
