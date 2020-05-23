@@ -22,6 +22,7 @@ public class Skeleton extends Monsters {
             System.out.println("Skeletons resurrected itself, recovered and have all full HP");
             hp = maxHp;
             return 0;
+
         } else if (ProbAttack <= 0.53) {
             System.out.println("Skeletons attacked you with its normal damage attack!!");
             return attack;

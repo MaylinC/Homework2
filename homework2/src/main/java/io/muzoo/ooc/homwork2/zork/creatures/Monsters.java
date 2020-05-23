@@ -31,5 +31,4 @@ public abstract class Monsters {   /// monster and boss
     }
 
     abstract public Integer Strike();
-
 }
