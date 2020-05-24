@@ -52,7 +52,7 @@ public class Participants implements GetProperties {
         return this.defence;
     }
 
-    public Integer getKnife() { return knife.getAttackDamage(); }
+    public Knife getKnife() { return knife; }
 
     public Inventory getInventory() {
         return inventory;

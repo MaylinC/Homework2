@@ -11,10 +11,9 @@ public class AttackCommand implements Command{
     private Monsters monster;
     private String description;
 
-    public AttackCommand(Participants participants, Monsters monster, String description) {
+    public AttackCommand(Participants participants, Monsters monster) {
         this.participants = participants;
         this.monster = monster;
-        this.description = description;
     }
 
     public Integer damageDealt() {
@@ -44,18 +43,25 @@ public class AttackCommand implements Command{
         }
 
         else if (monster.getName().equals("Drunk Baboon") || monster.getName().equals("Shallow Skeleton")) {
-            System.out.println("You attacked a" + monster.getName());
-            double defencePercent = (1 - (double) monster.getDefence() / 100);
-            Integer monsterCurrentHp = (monster.getHp() - (damageDealt() * (int) defencePercent));
-            System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);
-            monster.updateHP(monsterCurrentHp);
+            if (participants.getKnife().getFound()) {
+                participants.updateAttack(participants.getAttack() + participants.getKnife().getAttackDamage());
+                System.out.println("You attacked a" + monster.getName());
+                double defencePercent = (1 - (double) monster.getDefence() / 100);
+                Integer monsterCurrentHp = (monster.getHp() - (damageDealt() * (int) defencePercent));
+                System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);
+                monster.updateHP(monsterCurrentHp);
+                participants.updateAttack(participants.getAttack() - participants.getKnife().getAttackDamage());
+            }
         }
 
         else {
-            System.out.println("You attacked a" + monster.getName());
-            Integer monsterCurrentHp = (monster.getHp() - damageDealt());
-            System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);
-            monster.updateHP(monsterCurrentHp);
+            if (participants.getKnife().getFound()) {
+                participants.updateAttack(participants.getAttack() + participants.getKnife().getAttackDamage());
+                System.out.println("You attacked a" + monster.getName());
+                Integer monsterCurrentHp = (monster.getHp() - damageDealt());
+                System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);
+                monster.updateHP(monsterCurrentHp);
+            }
         }
     }
 

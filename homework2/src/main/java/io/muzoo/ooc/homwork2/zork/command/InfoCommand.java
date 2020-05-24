@@ -18,19 +18,19 @@ public class InfoCommand implements Command {
         System.out.println(participants.getInventory().displayInventory());
 
         System.out.println("Deathly hollows:");
-        if (participants.getArmor().getBooFound()) {
+        if (participants.getArmor().getFound()) {
             System.out.println("Iron Battle Armor - Founded");
         }
         else {
             System.out.println("Iron Battle Armor - Not Found");
         }
-        if (participants.getExcaliburSword().getBooFound()) {
+        if (participants.getExcaliburSword().getFound()) {
             System.out.println("Excalibur Sword - Founded");
         }
         else {
             System.out.println("Excalibur Sword - Not Found");
         }
-        if (participants.getStone().getBooFound()) {
+        if (participants.getStone().getFound()) {
             System.out.println("Resurrection Stone - Founded");
         }
         else {

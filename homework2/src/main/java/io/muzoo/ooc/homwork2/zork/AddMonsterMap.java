@@ -1,22 +1,21 @@
 package io.muzoo.ooc.homwork2.zork;
 
-import io.muzoo.ooc.homwork2.zork.command.InfoCommand;
+
+import io.muzoo.ooc.homwork2.zork.creatures.Boss;
 import io.muzoo.ooc.homwork2.zork.creatures.CannibalTribe;
 import io.muzoo.ooc.homwork2.zork.creatures.DrunkBaboon;
-import io.muzoo.ooc.homwork2.zork.creatures.Monsters;
-import io.muzoo.ooc.homwork2.zork.creatures.Skeleton;
 
-import java.rmi.MarshalledObject;
+import io.muzoo.ooc.homwork2.zork.creatures.Skeleton;
+import io.muzoo.ooc.homwork2.zork.item.*;
+
 import java.util.*;
 
 public abstract class AddMonsterMap {
 
-    public Integer boss;
-    public Integer generate;
     String fileName;
     String getFirstLine;
     public Map<String, SetRoom> bigMap = new HashMap<String, SetRoom>();
-    public ArrayList<String> lstRoom = new ArrayList<>();
+    public ArrayList<String> lstRoom = new ArrayList<>(); // get list of 20 rooms out
 
 
     public String checkMapFile() {
@@ -41,43 +40,47 @@ public abstract class AddMonsterMap {
         return randRoomLst;
     }
 
-    public void randMonster(Integer numOfMonsters) {
+    public void randMonster() { //random monster into 10 room but not in abyss
         double rand = Math.random();
-        ArrayList<String> rmLst = randRoom(numOfMonsters);
-        for (int num = 0; num <= numOfMonsters; num++)
-            if(rand <= 0.33) {
-                bigMap.get(rmLst.get(num)).generateMonster(new Skeleton());
-            }
-            else if(rand <= 0.66) {
-                bigMap.get(rmLst.get(num)).generateMonster(new DrunkBaboon());
-            }
-            else {
-                bigMap.get(rmLst.get(num)).generateMonster(new CannibalTribe());
-            }
-    }
-
-    public void randItem(Integer numOfItems) {
-        double rand = Math.random();
-        ArrayList<String> rmLst = randRoom(numOfItems);
-        for (int num = 0; num <= numOfItems; num++) {
-            if(rand <= 0.33)  {
-                bigMap.get(rmLst.get(num)).generateItem();
-            }
-            else if (rand <= 0.66) {
-                bigMap.
-            }
-            else {
-
+        ArrayList<String> rmLst = randRoom(10);
+        for (int num = 0; num <= 10; num++) {
+            if (!rmLst.get(num).equals("abyssToHell")) {
+                if (rand <= 0.33) {
+                    bigMap.get(rmLst.get(num)).generateMonster(new Skeleton());
+                } else if (rand <= 0.66) {
+                    bigMap.get(rmLst.get(num)).generateMonster(new DrunkBaboon());
+                } else {
+                    bigMap.get(rmLst.get(num)).generateMonster(new CannibalTribe());
+                }
             }
         }
     }
 
+    public void randItem() { //random mushroom and knife into 14 room but not ......
+        double rand = Math.random();
+        ArrayList<String> rmLst = randRoom(14);
+        for (int num = 0; num <= 14; num++) {
+            if (!rmLst.get(num).equals("abyssToHell") && !rmLst.get(num).equals("crazyMazed")
+                    && !rmLst.get(num).equals("the7Seas") && !rmLst.get(num).equals("bloodStream")) {
+                if(rand <= 0.70) {
+                    bigMap.get(rmLst.get(num)).generateItem(new WizardFuryTruffle());
+                }
+                else {
+                    bigMap.get(rmLst.get(num)).generateItem(new Knife());
+                }
+            }
+        }
+    }
 
+    public void setDeathlyHallow() { // set room for deathly hallow
+        bigMap.get("crazyMazed").generateItem(new IronBattleArmor());
+        bigMap.get("the7Seas").generateItem(new ResurrectionStone());
+        bigMap.get("bloodStream").generateItem(new ExcaliburSword());
+    }
 
-
-
-
-
+    public void setBoss() {
+        bigMap.get("abyssToHell").generateMonster(new Boss());
+    }
 
 
 
