@@ -72,13 +72,11 @@ public class Participants implements GetProperties {
     public void setFoundStone() {
         resurrectionStone.setFoundStone();
         System.out.println("Now you have found one of the third object -Resurrection Stone- you have gain extra more HP");
-        this.hp += resurrectionStone.getGainHp();
     }
 
     public void setFoundSword() {
         excaliburSword.setFoundSword();
         System.out.println("Now you have found the most powerful sword -Sword of Excalibur- you can use this to defeat the boss");
-        this.attack += excaliburSword.getAttackDamage();
     }
 
     public void setFoundArmor() {
@@ -89,6 +87,10 @@ public class Participants implements GetProperties {
 
     public void updateHP (Integer alterHP) {
         this.hp = alterHP;
+    }
+
+    public void updateAttack (Integer alterAttack) {
+        this.attack = alterAttack;
     }
 
 }
