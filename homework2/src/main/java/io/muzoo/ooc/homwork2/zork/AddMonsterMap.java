@@ -7,17 +7,18 @@ import io.muzoo.ooc.homwork2.zork.creatures.Monsters;
 import io.muzoo.ooc.homwork2.zork.creatures.Skeleton;
 
 import java.rmi.MarshalledObject;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
-public class AddMonsterMap {
-    private MapCreation map;
-    private SetRoom setRoom;
-    private Integer boss;
-    private Integer generate;
-    private ArrayList<String> roomLst;
+public abstract class AddMonsterMap {
+
+    public MapCreation map;
+    public SetRoom setRoom;
+    public Integer boss;
+    public Integer generate;
+    String fileName;
+    String getFirstLine;
+    public Map<String, SetRoom> bigMap = new HashMap<String, SetRoom>();
+    public ArrayList<String> lstRoom = new ArrayList<>();
 
 
     public String checkMapFile() {
@@ -29,18 +30,14 @@ public class AddMonsterMap {
         }
     }
 
-    public AddMonsterMap(MapCreation map, SetRoom setRoom) {
-        map = new MapCreation(checkMapFile());
-        this.setRoom = setRoom;
-        ArrayList<String> lstRm = map.lstRoom;
-    }
-
-    public ArrayList<String> randRoom(ArrayList<String> lst) {
-
-        Random rand = new Random();
-        int indexRand = rand.nextInt(20);
-        roomLst.add(lst.get(indexRand));
-        return roomLst;
+    public ArrayList<String> randRoom(Integer number) {
+        int num = 0;
+        while ( num <= number) {
+            Random rand = new Random();
+            int indexRand = rand.nextInt(20);
+            roomLst.add(lst.get(indexRand));
+            return roomLst;
+        }
     }
 
     public void randMonster(ArrayList) {

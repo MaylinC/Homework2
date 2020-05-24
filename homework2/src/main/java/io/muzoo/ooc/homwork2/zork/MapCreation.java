@@ -7,17 +7,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapCreation {
+public class MapCreation extends AddMonsterMap {
 
-    String fileName;
-    String getFirstLine;
-
-    Map<String, SetRoom> bigMap = new HashMap<String, SetRoom>();
-    ArrayList<String> lstRoom = new ArrayList<>();
-
-
-    public MapCreation(String fileName) {
+    public MapCreation() {
         this.fileName = fileName;
+        this.lstRoom = lstRoom;
+        this.bigMap = bigMap;
     }
 
     private Map<String, SetRoom> readMap() throws IOException {
@@ -29,7 +24,9 @@ public class MapCreation {
         String line = null;
 
         while ((line = bufferedReader.readLine()) != null) {
+
             String currentRoom = line.split(":")[0];
+            lstRoom.add(currentRoom);
             String roomDescription = line.split(":")[1].split("-")[0];
             String[] separateNeigh = line.split(":")[1].split("-")[1].split(",");
             SetRoom tmp = new SetRoom(roomDescription);
