@@ -23,6 +23,7 @@ public class Participants implements GetProperties {
         knife = new Knife();
         resurrectionStone = new ResurrectionStone();
         excaliburSword = new ExcaliburSword();
+        armor = new IronBattleArmor();
         this.inventory = new Inventory();
     }
 
@@ -57,23 +58,31 @@ public class Participants implements GetProperties {
         return inventory;
     }
 
+    public ResurrectionStone getStone() {
+        return resurrectionStone;
+    }
+    public ExcaliburSword getExcaliburSword() {
+        return excaliburSword;
+    }
+
+    public IronBattleArmor getArmor(){
+        return armor;
+    }
+
     public void setFoundStone() {
-        boolean boo = resurrectionStone.getBooFound();
-        boo = true;
+        resurrectionStone.setFoundStone();
         System.out.println("Now you have found one of the third object -Resurrection Stone- you have gain extra more HP");
         this.hp += resurrectionStone.getGainHp();
     }
 
     public void setFoundSword() {
-        boolean boo = excaliburSword.getBooFound();
-        boo = true;
+        excaliburSword.setFoundSword();
         System.out.println("Now you have found the most powerful sword -Sword of Excalibur- you can use this to defeat the boss");
         this.attack += excaliburSword.getAttackDamage();
     }
 
     public void setFoundArmor() {
-        boolean boo = armor.getBooFound();
-        boo = true;
+        armor.setFoundArmor();
         System.out.println("You have found the strongest Armor suit in the realm -IronBattleArmor-, your defence have increase");
         this.defence += armor.getGainDefence() ;
     }

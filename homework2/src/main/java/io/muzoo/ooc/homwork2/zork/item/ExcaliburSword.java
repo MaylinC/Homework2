@@ -22,4 +22,8 @@ public class ExcaliburSword {
     public boolean getBooFound() {
         return foundSword;
     }
+
+    public void setFoundSword() {
+        this.foundSword = true;
+    }
 }

@@ -21,4 +21,8 @@ public class IronBattleArmor {
     public Integer getGainDefence() {
         return gainDefence;
     }
+
+    public void setFoundArmor() {
+        this.foundArmor = true;
+    }
 }

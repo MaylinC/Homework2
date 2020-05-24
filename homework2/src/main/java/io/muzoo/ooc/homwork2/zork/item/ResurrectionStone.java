@@ -19,4 +19,8 @@ public class ResurrectionStone {
     }
 
     public Integer getGainHp() {return gainHp;}
+
+    public void setFoundStone() {
+        this.foundStone = true;
+    }
 }
