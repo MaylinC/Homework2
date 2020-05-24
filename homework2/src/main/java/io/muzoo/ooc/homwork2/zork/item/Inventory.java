@@ -46,7 +46,7 @@ public class Inventory {
             WizardFuryTruffle mushroom = bag.get(bag.size() - 1);
             countMushroom -= 1;
             bag.remove(bag.size() - 1);
-            return mushroom.getHealHP();
+            return mushroom.getGainHp();
 
         } else {
             System.out.println("Your bag is empty, can't get mushroom !! (Get more Mushrooms)");

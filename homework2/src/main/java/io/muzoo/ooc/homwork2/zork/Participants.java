@@ -52,7 +52,7 @@ public class Participants implements GetProperties {
         return this.defence;
     }
 
-    public Integer getKnife() { return knife.getAttackDestruction(); }
+    public Integer getKnife() { return knife.getAttackDamage(); }
 
     public Inventory getInventory() {
         return inventory;
@@ -71,17 +71,17 @@ public class Participants implements GetProperties {
     }
 
     public void setFoundStone() {
-        resurrectionStone.setFoundStone();
+        resurrectionStone.setFound();
         System.out.println("Now you have found one of the third object -Resurrection Stone- you have gain extra more HP");
     }
 
     public void setFoundSword() {
-        excaliburSword.setFoundSword();
+        excaliburSword.setFound();
         System.out.println("Now you have found the most powerful sword -Sword of Excalibur- you can use this to defeat the boss");
     }
 
     public void setFoundArmor() {
-        armor.setFoundArmor();
+        armor.setFound();
         System.out.println("You have found the strongest Armor suit in the realm -IronBattleArmor-, your defence have increase");
     }
 

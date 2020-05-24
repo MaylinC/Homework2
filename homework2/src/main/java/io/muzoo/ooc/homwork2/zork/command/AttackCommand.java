@@ -24,15 +24,15 @@ public class AttackCommand implements Command{
     @Override
     public void execute(String arg) {
         if (monster.getName().equals("Basilisk")) {
-            if (participants.getStone().getBooFound()) {
+            if (participants.getStone().getFound()) {
                 participants.updateAttack(participants.getMaxHp());
                 participants.updateAttack(participants.getAttack() + participants.getStone().getGainHp());
             }
 
-            if (participants.getArmor().getBooFound()) {
+            if (participants.getArmor().getFound()) {
                 participants.updateAttack(participants.getAttack() + participants.getArmor().getGainDefence());
             }
-            if (participants.getExcaliburSword().getBooFound()) {
+            if (participants.getExcaliburSword().getFound()) {
                 participants.updateAttack(participants.getAttack() + participants.getExcaliburSword().getAttackDamage());
             }
 

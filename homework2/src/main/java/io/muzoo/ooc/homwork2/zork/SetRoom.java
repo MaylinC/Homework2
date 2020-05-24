@@ -1,10 +1,7 @@
 package io.muzoo.ooc.homwork2.zork;
 
 import io.muzoo.ooc.homwork2.zork.creatures.Monsters;
-import io.muzoo.ooc.homwork2.zork.item.ExcaliburSword;
-import io.muzoo.ooc.homwork2.zork.item.IronBattleArmor;
-import io.muzoo.ooc.homwork2.zork.item.ResurrectionStone;
-import io.muzoo.ooc.homwork2.zork.item.WizardFuryTruffle;
+import io.muzoo.ooc.homwork2.zork.item.*;
 
 import javax.jws.Oneway;
 import java.io.IOException;
@@ -16,7 +13,7 @@ public class SetRoom {    //set
     private Boolean checkMonster;
     private Boolean checkItem;
     private Monsters monsters;
-    private Object item; // take item with any types
+    private DeathlyItem item; // take item with any types
 
     public SetRoom(String description){
 
@@ -42,7 +39,7 @@ public class SetRoom {    //set
         checkMonster = true;
     }
 
-    public void generateItem(Object item) {
+    public void generateItem(DeathlyItem item) {
         this.item = item;
         this.checkItem = true;
     }

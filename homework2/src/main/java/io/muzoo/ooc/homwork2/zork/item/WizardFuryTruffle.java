@@ -1,15 +1,9 @@
 package io.muzoo.ooc.homwork2.zork.item;
 
-public class WizardFuryTruffle {
+public class WizardFuryTruffle extends DeathlyItem{
 
-    private Integer healHP = 8;
-    private String name = "Wizard's Fury Truffle";
-
-    public String getName(){
-        return name;
-    }
-
-    public Integer getHealHP(){
-        return healHP;
+    public WizardFuryTruffle() {
+        gainHp = 8;
+        name = "Wizard's Fury Truffle";
     }
 }

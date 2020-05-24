@@ -1,24 +1,14 @@
 package io.muzoo.ooc.homwork2.zork.item;
 
-public class Knife {
-
-    private Integer attackDestruction;
-    private String name;
+public class Knife extends DeathlyItem {
 
     public Knife() {
-        attackDestruction = 5;
+        attackDamage = 5;
         name = "Knife Saver";
     }
 
-    public String getName() {
-        return name;
-    }
-
     public Knife(Integer attackDestruction) {
-        this.attackDestruction=attackDestruction;
+        this.attackDamage = attackDestruction;
     }
 
-    public Integer getAttackDestruction() {
-        return attackDestruction;
-    }
 }

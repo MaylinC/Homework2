@@ -1,26 +1,14 @@
 package io.muzoo.ooc.homwork2.zork.item;
 
-public class ResurrectionStone {
-
-    private boolean foundStone;
-    private Integer gainHp;
+public class ResurrectionStone extends DeathlyItem {
 
     public ResurrectionStone() {
-        foundStone = false;
+        foundItem= false;
         gainHp = 250;
-
     }
+
     public ResurrectionStone(boolean foundStone) {
-        this.foundStone = foundStone;
+        this.foundItem = foundStone;
     }
 
-    public boolean getBooFound() {
-        return foundStone;
-    }
-
-    public Integer getGainHp() {return gainHp;}
-
-    public void setFoundStone() {
-        this.foundStone = true;
-    }
 }
