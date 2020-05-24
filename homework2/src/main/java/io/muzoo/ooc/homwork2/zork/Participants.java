@@ -61,6 +61,7 @@ public class Participants implements GetProperties {
     public ResurrectionStone getStone() {
         return resurrectionStone;
     }
+
     public ExcaliburSword getExcaliburSword() {
         return excaliburSword;
     }
@@ -82,7 +83,6 @@ public class Participants implements GetProperties {
     public void setFoundArmor() {
         armor.setFoundArmor();
         System.out.println("You have found the strongest Armor suit in the realm -IronBattleArmor-, your defence have increase");
-        this.defence += armor.getGainDefence() ;
     }
 
     public void updateHP (Integer alterHP) {

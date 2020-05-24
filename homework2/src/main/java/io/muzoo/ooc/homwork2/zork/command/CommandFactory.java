@@ -15,10 +15,9 @@ public class CommandFactory {
         commandMap.put("take", new TakeCommand());
         commandMap.put("drop", new DropCommand());
         commandMap.put("go", new GoDirection());
-        commandMap.put("info", new );
+        commandMap.put("info", new InfoCommand());
         commandMap.put("help", new );
         commandMap.put("attack", new AttackCommand());
-
     }
 
     public static Command getCommand(String cmd) {

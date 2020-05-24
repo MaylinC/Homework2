@@ -16,10 +16,9 @@ public class Inventory {
         this.bag = bag;
     }
 
-    public void displayInventory() {
-        System.out.println("Wizard's Fury Truffle = " + countMushroom.toString());
+    public String displayInventory() {
+        return "Wizard's Fury Truffle in your bag = " + countMushroom.toString();
     }
-
 
     public void takeMushroom(WizardFuryTruffle mushroom) {
         countMushroom += 1;

@@ -25,8 +25,10 @@ public class AttackCommand implements Command{
     public void execute(String arg) {
         if (monster.getName().equals("Basilisk")) {
             if (participants.getStone().getBooFound()) {
+                participants.updateAttack(participants.getMaxHp());
                 participants.updateAttack(participants.getAttack() + participants.getStone().getGainHp());
             }
+
             if (participants.getArmor().getBooFound()) {
                 participants.updateAttack(participants.getAttack() + participants.getArmor().getGainDefence());
             }

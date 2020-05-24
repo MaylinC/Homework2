@@ -3,24 +3,28 @@ package io.muzoo.ooc.homwork2.zork;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MapCreation {
 
     String fileName;
+    String getFirstLine;
 
-    Map<String,SetRoom> bigMap = new HashMap<String,SetRoom>();
+    Map<String, SetRoom> bigMap = new HashMap<String, SetRoom>();
+    ArrayList<String> lstRoom = new ArrayList<>();
+
 
     public MapCreation(String fileName) {
         this.fileName = fileName;
     }
 
-    private void readMap() throws IOException {
+    private Map<String, SetRoom> readMap() throws IOException {
 
         FileReader reader = new FileReader(fileName);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
-        bufferedReader.readLine();
+        getFirstLine = bufferedReader.readLine();
 
         String line = null;
 
@@ -29,10 +33,9 @@ public class MapCreation {
             String roomDescription = line.split(":")[1].split("-")[0];
             String[] separateNeigh = line.split(":")[1].split("-")[1].split(",");
             SetRoom tmp = new SetRoom(roomDescription);
-            for(int inx = 0; inx < separateNeigh.length; inx++) {
+            for (int inx = 0; inx < separateNeigh.length; inx++) {
                 if (!separateNeigh[inx].equals("#")) {
                     if (inx == 0) {
-                        System.out.println(separateNeigh[inx]);
                         tmp.setWay("North", separateNeigh[0]);
                     }
                     if (inx == 1) {
@@ -47,16 +50,18 @@ public class MapCreation {
                 }
             }
 
-            bigMap.put(currentRoom,tmp);
+            bigMap.put(currentRoom, tmp);
         }
 
         bufferedReader.close();
+        return bigMap;
+
     }
 
-    public static void main(String[] args) throws IOException{
-        MapCreation file = new MapCreation("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
-        file.readMap();
-    }
+//    public static void main(String[] args) throws IOException{
+//        MapCreation file = new MapCreation("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
+//        file.readMap();
+//    }
 
 }
 

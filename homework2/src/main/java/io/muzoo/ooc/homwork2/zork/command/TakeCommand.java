@@ -11,7 +11,8 @@ public class TakeCommand implements Command {
     }
 
     @Override
-    public void execute(String word2) {
+    public void execute(String cmd2) {
+        
 
     }
 

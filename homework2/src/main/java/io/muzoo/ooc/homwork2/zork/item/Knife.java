@@ -6,9 +6,8 @@ public class Knife {
     private String name;
 
     public Knife() {
-        attackDestruction = 15;
+        attackDestruction = 5;
         name = "Knife Saver";
-
     }
 
     public String getName() {
