@@ -2,6 +2,7 @@ package io.muzoo.ooc.homwork2.zork.creatures;
 
 public class Boss extends Monsters {
     public Boss() {
+        name = "Basilisk";
         hp = 650;
         maxHp = 650;
         maxAttack = 65;
@@ -16,7 +17,7 @@ public class Boss extends Monsters {
     }
 
     @Override
-    public Integer Strike() {
+    public Integer strike() {
         double ProbAttack = Math.random();
         if (ProbAttack <= 0.02) { //2%
             System.out.println("Basilisk attacked you with its ***MAX*** damage");

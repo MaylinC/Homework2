@@ -12,6 +12,7 @@ public abstract class Monsters {   /// monster and boss
     public Integer attack;
     public Integer defence;
     public String description;
+    public String name;
 
 
     public Integer getHp() {
@@ -30,5 +31,11 @@ public abstract class Monsters {   /// monster and boss
         return this.description;
     }
 
-    abstract public Integer Strike();
+    public String getName() { return this.name; }
+
+    abstract public Integer strike();
+
+    public void updateHP (Integer alterHP) {
+        this.hp = alterHP;
+    }
 }

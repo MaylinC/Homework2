@@ -2,6 +2,7 @@ package io.muzoo.ooc.homwork2.zork.creatures;
 
 public class DrunkBaboon extends Monsters {
     public DrunkBaboon() {
+        name = "Drunk Baboon";
         hp = 100;
         maxHp = 100;
         attack = 10;
@@ -15,7 +16,7 @@ public class DrunkBaboon extends Monsters {
     }
 
     @Override
-    public Integer Strike() {
+    public Integer strike() {
         double ProbAttack = Math.random();
         if (ProbAttack <= 0.1) {
             System.out.println("Baboon is too drunk to attack you");

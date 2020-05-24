@@ -2,6 +2,7 @@ package io.muzoo.ooc.homwork2.zork.creatures;
 
 public class CannibalTribe extends Monsters {
     public CannibalTribe() {
+        name = "Cannibal Tribe";
         hp = 85;
         maxHp = 85;
         attack = 10;
@@ -15,7 +16,7 @@ public class CannibalTribe extends Monsters {
     }
 
     @Override
-    public Integer Strike() {
+    public Integer strike() {
         double ProbAttack = Math.random();
         if (ProbAttack <= 0.5) {
             System.out.println("Cannibal Tribe attacked you with its normal damage attack");

@@ -3,6 +3,7 @@ package io.muzoo.ooc.homwork2.zork.creatures;
 public class Skeleton extends Monsters {
 
     public Skeleton() {
+        name = "Shallow Skeleton";
         hp = 40;
         maxHp = 40;
         attack = 15;
@@ -16,7 +17,7 @@ public class Skeleton extends Monsters {
     }
 
     @Override
-    public Integer Strike() {
+    public Integer strike() {
         double ProbAttack = Math.random(); //0-1;
         if (ProbAttack <= 0.03) {
             System.out.println("Skeletons resurrected itself, recovered and have all full HP");

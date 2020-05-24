@@ -1,5 +1,7 @@
 package io.muzoo.ooc.homwork2.zork.command;
 
+import io.muzoo.ooc.homwork2.zork.Participants;
+
 import javax.activation.CommandMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,18 +12,22 @@ public class CommandFactory {
 
     static { //static initialisation
         commandMap.put("exit", new ExitCommand());
-        commandMap.put("echo", new EchoCommand());
-//        commandMap.put("take",new )
-//        commandMap.put("drop", new )
-//        commandMap.put("go", new GoDirection());
-//        commandMap.put("info", )
-//        commandMap.put("help", );
-
-
+        commandMap.put("take", new TakeCommand());
+        commandMap.put("drop", new DropCommand());
+        commandMap.put("go", new GoDirection());
+        commandMap.put("info", new );
+        commandMap.put("help", new );
+        commandMap.put("attack", new AttackCommand());
 
     }
-    public static Command getCommand(String cmd) {
-        return commandMap.get("Good Bye !");
 
+    public static Command getCommand(String cmd) {
+        return commandMap.get(cmd);
+
+    }
+
+    public Boolean checkContainCommand(String cmd1){
+        return commandMap.containsKey(cmd1);
     }
 }
+
