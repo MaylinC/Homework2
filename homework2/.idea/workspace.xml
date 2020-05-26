@@ -10,20 +10,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/GetProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/GetProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/MapCreation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/Participants.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/Participants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/SetRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/ExcaliburSword.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/ExcaliburSword.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/Inventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/Knife.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/Knife.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/ResurrectionStone.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/ResurrectionStone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/AddMonsterMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/AddMonsterMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/GetProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/GetProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Map1" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Map1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/MapCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/MapCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Participants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Participants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Map1" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Map1" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +203,7 @@
       <workItem from="1590289545358" duration="40652000" />
       <workItem from="1590404648539" duration="6366000" />
       <workItem from="1590459939724" duration="1560000" />
-      <workItem from="1590465775121" duration="2456000" />
+      <workItem from="1590465775121" duration="9545000" />
     </task>
     <task id="LOCAL-00001" summary="hw2">
       <created>1590222633026</created>
@@ -300,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590332473923</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="try Ascii">
+      <created>1590470667359</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1590470667359</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,6 +325,7 @@
     <MESSAGE value="fixing" />
     <MESSAGE value="Fixing abstract class for Items" />
     <MESSAGE value="Finish AddMonsterMap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish AddMonsterMap" />
+    <MESSAGE value="try Ascii" />
+    <option name="LAST_COMMIT_MESSAGE" value="try Ascii" />
   </component>
 </project>

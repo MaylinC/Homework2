@@ -11,7 +11,7 @@ public class MapCreation extends AddMonsterMap {
 
     private String cornerRoom;
 
-    public MapCreation() {
+    public MapCreation(String fileName) {
         this.fileName = fileName;
     }
 
@@ -24,21 +24,20 @@ public class MapCreation extends AddMonsterMap {
         String line = null;
 
         while ((line = bufferedReader.readLine()) != null) {
-
+            int count = 0;
             String currentRoom = line.split(":")[0];
             lstRoom.add(currentRoom);
             String roomDescription = line.split(":")[1].split("-")[0];
             String[] separateNeigh = line.split(":")[1].split("-")[1].split(",");
             SetRoom tmp = new SetRoom(roomDescription);
             for (int inx = 0; inx < separateNeigh.length; inx++) {
-                int count = 0;
                 if (separateNeigh[inx].equals("#")) {
                     count += 1;
                     if (count == 2) {
-                        cornerRoom = separateNeigh[inx+1];
+                        cornerRoom = currentRoom;
                     }
                 }
-                if (!separateNeigh[inx].equals("#")) {
+                if (!separateNeigh[inx].equals("#") && !separateNeigh[inx].equals("*")) {
                     count = 0;
                     if (inx == 0) {
                         tmp.setWay("North", separateNeigh[0]);
@@ -55,7 +54,6 @@ public class MapCreation extends AddMonsterMap {
                 }
             }
             bigMap.put(currentRoom, tmp);
-            System.out.println(cornerRoom);
         }
 
         bufferedReader.close();
@@ -63,9 +61,37 @@ public class MapCreation extends AddMonsterMap {
 
     }
 
+    public void asciiMap() {
+        String nextEastRoom;
+        String leftConnerRoom;
+        String topConnerRoom = cornerRoom;
+        for (int row = 0; row <= 5; row++) {
+            String line = topConnerRoom + " ";
+            leftConnerRoom = bigMap.get(cornerRoom).getNeighbor("South");
+            for (int col = 0; col <= 4; col++) {
+                nextEastRoom = bigMap.get(cornerRoom).getNeighbor("East");
+                if (nextEastRoom != null) {
+                    cornerRoom = nextEastRoom;
+                    line += " " + cornerRoom;
+                }
+            }
+            if (leftConnerRoom != null) {
+                cornerRoom = leftConnerRoom;
+                line += " " + cornerRoom;
+            }
+
+            System.out.println(line);
+        }
+
+    }
+
+
+
     public static void main(String[] args) throws IOException{
         MapCreation file = new MapCreation("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
         file.readMap();
+        file.asciiMap();
+
     }
 }
 
