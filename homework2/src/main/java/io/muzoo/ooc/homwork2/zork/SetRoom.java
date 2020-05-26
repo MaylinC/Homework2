@@ -49,12 +49,30 @@ public class SetRoom {    //set
     }
 
     public void takeOutItem() {
-        checkItem = false; }
+        this.checkItem = false; }
 
-    public Object getItem() {
+    public DeathlyItem getItem() {
         return item;
     }
 
+    public Boolean getCheckItem() {
+        return this.checkItem;
+    }
 
+    public Boolean setCheckItem() {
+        return this.checkItem = true;
+    }
+
+    public Boolean getCheckMonster() {
+        return this.checkMonster;
+    }
+
+    public Boolean setCheckMonster() {
+        return this.checkMonster = true;
+    }
+
+    public Monsters getMonsters() {
+        return monsters;
+    }
 
 }

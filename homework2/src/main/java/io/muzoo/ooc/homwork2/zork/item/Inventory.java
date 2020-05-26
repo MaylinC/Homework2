@@ -43,7 +43,7 @@ public class Inventory {
     public Integer getMushroom() {
         boolean emp = bag.isEmpty();
         if (!emp) {
-            WizardFuryTruffle mushroom = bag.get(bag.size() - 1);
+            DeathlyItem mushroom = bag.get(bag.size() - 1);
             countMushroom -= 1;
             bag.remove(bag.size() - 1);
             return mushroom.getGainHp();

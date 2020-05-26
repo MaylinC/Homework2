@@ -16,6 +16,6 @@ theNinthCircle:A room where the most oldest and the most ferocious hydra lives, 
 cursedRoom:A room filled with the dolls that haunt little children in past centuries-abyssToHell,#,roomOfTorture,bloodStream
 magicTunnel:A tunnel that bends and twists the will and mind of any living thing-roomOfTorture,bloodStream,iceGate,#
 abandonClockTower:An old clock tower that used to WATCH over the beautiful Kingdom of Narnia-the7Seas,iceGate,#,*
-CellsOfMystery:A room that showcases all the mysteries in the world known to humankind-#,#,creepyCanyon,theNinthCircle
+cellsOfMystery:A room that showcases all the mysteries in the world known to humankind-#,#,creepyCanyon,theNinthCircle
 bloodStream:A river that does not seem red, but taste like the blood of a thousand soldiers-cursedRoom,#,magicTunnel,#
 the7Seas:A room that is an aquarium that hold the most beautiful mythical and rare creatures from around the world-prohibitedArea,dungeonChamber,#,abandonClockTower

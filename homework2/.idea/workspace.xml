@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="042d62ac-5a4a-405e-af4c-a9bbe32959dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/HelpCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,7 +12,21 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/Map1" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Map1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/AddMonsterMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/AddMonsterMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Combat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/MapCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/MapCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Participants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Participants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/SetRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/SetRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/GoDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/GoDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/TakeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/TakeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/DeathlyItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/DeathlyItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/ExcaliburSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/ExcaliburSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/IronBattleArmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/IronBattleArmor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Knife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Knife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/ResurrectionStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/ResurrectionStone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Map1" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Map1" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -203,7 +218,7 @@
       <workItem from="1590289545358" duration="40652000" />
       <workItem from="1590404648539" duration="6366000" />
       <workItem from="1590459939724" duration="1560000" />
-      <workItem from="1590465775121" duration="9545000" />
+      <workItem from="1590465775121" duration="22771000" />
     </task>
     <task id="LOCAL-00001" summary="hw2">
       <created>1590222633026</created>
@@ -296,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590470667359</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fixing ascii">
+      <created>1590490157677</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1590490157677</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +348,7 @@
     <MESSAGE value="Fixing abstract class for Items" />
     <MESSAGE value="Finish AddMonsterMap" />
     <MESSAGE value="try Ascii" />
-    <option name="LAST_COMMIT_MESSAGE" value="try Ascii" />
+    <MESSAGE value="fixing ascii" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing ascii" />
   </component>
 </project>

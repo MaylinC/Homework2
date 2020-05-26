@@ -20,7 +20,6 @@ public class Combat {
         this.commandFactory = commandFactory;
         parser = new Parser();
         command = new GetCommand();
-
     }
 
     public void battle() {

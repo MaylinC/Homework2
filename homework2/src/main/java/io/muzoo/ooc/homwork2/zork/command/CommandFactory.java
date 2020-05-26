@@ -19,7 +19,7 @@ public class CommandFactory {
         commandMap.put("drop", new DropCommand(participants));
         commandMap.put("go", new GoDirection());
         commandMap.put("info", new InfoCommand(participants));
-        //commandMap.put("help",);
+        commandMap.put("help", new HelpCommand());
         commandMap.put("attack", new AttackCommand(participants, monsters));
     }
 

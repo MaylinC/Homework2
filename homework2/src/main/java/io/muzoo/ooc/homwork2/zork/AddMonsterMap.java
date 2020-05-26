@@ -47,10 +47,13 @@ public abstract class AddMonsterMap {
             if (!rmLst.get(num).equals("abyssToHell")) {
                 if (rand <= 0.33) {
                     bigMap.get(rmLst.get(num)).generateMonster(new Skeleton());
+                    bigMap.get(rmLst.get(num)).setCheckMonster();
                 } else if (rand <= 0.66) {
                     bigMap.get(rmLst.get(num)).generateMonster(new DrunkBaboon());
+                    bigMap.get(rmLst.get(num)).setCheckMonster();
                 } else {
                     bigMap.get(rmLst.get(num)).generateMonster(new CannibalTribe());
+                    bigMap.get(rmLst.get(num)).setCheckMonster();
                 }
             }
         }
@@ -64,9 +67,11 @@ public abstract class AddMonsterMap {
                     && !rmLst.get(num).equals("the7Seas") && !rmLst.get(num).equals("bloodStream")) {
                 if(rand <= 0.70) {
                     bigMap.get(rmLst.get(num)).generateItem(new WizardFuryTruffle());
+                    bigMap.get(rmLst.get(num)).setCheckItem();
                 }
                 else {
                     bigMap.get(rmLst.get(num)).generateItem(new Knife());
+                    bigMap.get(rmLst.get(num)).setCheckItem();
                 }
             }
         }
@@ -74,12 +79,16 @@ public abstract class AddMonsterMap {
 
     public void setDeathlyHallow() { // set room for deathly hallow
         bigMap.get("crazyMazed").generateItem(new IronBattleArmor());
+        bigMap.get("crazyMazed").setCheckItem();
         bigMap.get("the7Seas").generateItem(new ResurrectionStone());
+        bigMap.get("the7Seas").setCheckItem();
         bigMap.get("bloodStream").generateItem(new ExcaliburSword());
+        bigMap.get("bloodStream").setCheckItem();
     }
 
     public void setBoss() {
         bigMap.get("abyssToHell").generateMonster(new Boss());
+        bigMap.get("abyssToHell").setCheckItem();
     }
 
 }

@@ -62,36 +62,37 @@ public class MapCreation extends AddMonsterMap {
     }
 
     public void asciiMap() {
+
         String nextEastRoom;
         String leftConnerRoom;
         String topConnerRoom = cornerRoom;
-        for (int row = 0; row <= 5; row++) {
-            String line = topConnerRoom + " ";
+
+        for (int row = 0; row < 5; row++) {
+            String line = topConnerRoom + "  ";
             leftConnerRoom = bigMap.get(cornerRoom).getNeighbor("South");
             for (int col = 0; col <= 4; col++) {
                 nextEastRoom = bigMap.get(cornerRoom).getNeighbor("East");
                 if (nextEastRoom != null) {
                     cornerRoom = nextEastRoom;
-                    line += " " + cornerRoom;
+                    line += " || " + cornerRoom;
                 }
             }
             if (leftConnerRoom != null) {
+                topConnerRoom = leftConnerRoom;
                 cornerRoom = leftConnerRoom;
-                line += " " + cornerRoom;
+                line += "  " ;
             }
 
+            line += " || ";
             System.out.println(line);
         }
-
     }
 
-
-
-    public static void main(String[] args) throws IOException{
-        MapCreation file = new MapCreation("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
-        file.readMap();
-        file.asciiMap();
-
-    }
+//    public static void main(String[] args) throws IOException{
+//        MapCreation file = new MapCreation("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
+//        file.readMap();
+//        file.asciiMap();
+//
+//    }
 }
 

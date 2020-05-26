@@ -5,6 +5,7 @@ public class ResurrectionStone extends DeathlyItem {
     public ResurrectionStone() {
         foundItem= false;
         gainHp = 250;
+        name = "Resurrection Stone";
     }
 
     public ResurrectionStone(boolean foundStone) {

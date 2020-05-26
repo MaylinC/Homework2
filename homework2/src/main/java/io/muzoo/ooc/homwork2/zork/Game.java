@@ -24,8 +24,8 @@ public class Game {
     public void Game(CommandFactory commandFactory) {
         parser = new Parser();
         this.commandFactory = commandFactory;
-        this.quit = true;
-        this.existGame = true;
+        this.quit = false;
+        this.existGame = false;
         this.bossDestroyed = false;
         command = new GetCommand();
     }
@@ -42,9 +42,11 @@ public class Game {
             command.getCommand(parser,commandFactory);
             commandFactory.playCommand();
 
-            
+            if (quit) {
 
+            }
 
+            while (map)
 
 
 

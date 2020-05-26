@@ -24,7 +24,9 @@ public abstract class DeathlyItem {
         return gainDefence;
     }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
     public Integer  getGainHp() {
         return gainHp;

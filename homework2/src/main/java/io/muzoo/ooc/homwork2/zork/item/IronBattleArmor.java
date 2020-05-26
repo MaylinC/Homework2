@@ -5,6 +5,7 @@ public class IronBattleArmor extends DeathlyItem {
     public IronBattleArmor() {
         foundItem = false;
         this.gainDefence = 20;
+        name = "IronBattle Armor";
     }
 
     public IronBattleArmor(boolean foundArmor) {

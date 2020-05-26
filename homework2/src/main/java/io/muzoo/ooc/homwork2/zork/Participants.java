@@ -2,6 +2,8 @@ package io.muzoo.ooc.homwork2.zork;
 
 import io.muzoo.ooc.homwork2.zork.item.*;
 
+import java.util.Set;
+
 public class Participants implements GetProperties {
 
     private Integer hp;
@@ -9,6 +11,7 @@ public class Participants implements GetProperties {
     private Integer attack;
     private Integer defence;
     private Knife knife;
+    private SetRoom location;
     private Inventory inventory;
     private ResurrectionStone resurrectionStone;
     private ExcaliburSword excaliburSword;
@@ -38,17 +41,23 @@ public class Participants implements GetProperties {
     }
 
     @Override
-    public Integer getMaxHp() { return this.maxHp; }
+    public Integer getMaxHp() {
+        return this.maxHp;
+    }
 
     @Override
-    public Integer getAttack() { return this.attack; }
+    public Integer getAttack() {
+        return this.attack;
+    }
 
     @Override
     public Integer getDefence() {
         return this.defence;
     }
 
-    public Knife getKnife() { return knife; }
+    public Knife getKnife() {
+        return knife;
+    }
 
     public Inventory getInventory() {
         return inventory;
@@ -87,6 +96,14 @@ public class Participants implements GetProperties {
 
     public void updateAttack (Integer alterAttack) {
         this.attack = alterAttack;
+    }
+
+    public SetRoom getLocation() {
+        return location;
+    }
+
+    public void updateLocation(SetRoom location) {
+        this.location = location;
     }
 
 }

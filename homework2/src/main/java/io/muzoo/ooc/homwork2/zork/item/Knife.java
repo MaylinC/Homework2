@@ -12,5 +12,4 @@ public class Knife extends DeathlyItem {
         this.attackDamage = attackDestruction;
         this.foundItem = foundItem;
     }
-
 }
