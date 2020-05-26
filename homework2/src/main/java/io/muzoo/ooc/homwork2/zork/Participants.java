@@ -6,7 +6,6 @@ public class Participants implements GetProperties {
 
     private Integer hp;
     private Integer maxHp;
-    private Integer currentLocation;
     private Integer attack;
     private Integer defence;
     private Knife knife;
@@ -43,9 +42,6 @@ public class Participants implements GetProperties {
 
     @Override
     public Integer getAttack() { return this.attack; }
-
-    @Override
-    public Integer getLocation() { return this.currentLocation; }
 
     @Override
     public Integer getDefence() {

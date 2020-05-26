@@ -13,13 +13,13 @@ public class CommandFactory {
     private static Participants participants;
     private static Monsters monsters;
 
-    static { //static initialisation
+    public static void playCommand(){ //static initialisation
         commandMap.put("exit", new ExitCommand());
         commandMap.put("take", new TakeCommand(participants));
         commandMap.put("drop", new DropCommand(participants));
         commandMap.put("go", new GoDirection());
         commandMap.put("info", new InfoCommand(participants));
-        commandMap.put("help", new );
+        //commandMap.put("help",);
         commandMap.put("attack", new AttackCommand(participants, monsters));
     }
 

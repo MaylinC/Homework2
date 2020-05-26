@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class MapCreation extends AddMonsterMap {
 
+    private String cornerRoom;
+
     public MapCreation() {
         this.fileName = fileName;
-        this.lstRoom = lstRoom;
-        this.bigMap = bigMap;
     }
 
     private Map<String, SetRoom> readMap() throws IOException {
@@ -31,7 +31,15 @@ public class MapCreation extends AddMonsterMap {
             String[] separateNeigh = line.split(":")[1].split("-")[1].split(",");
             SetRoom tmp = new SetRoom(roomDescription);
             for (int inx = 0; inx < separateNeigh.length; inx++) {
+                int count = 0;
+                if (separateNeigh[inx].equals("#")) {
+                    count += 1;
+                    if (count == 2) {
+                        cornerRoom = separateNeigh[inx+1];
+                    }
+                }
                 if (!separateNeigh[inx].equals("#")) {
+                    count = 0;
                     if (inx == 0) {
                         tmp.setWay("North", separateNeigh[0]);
                     }
@@ -46,8 +54,8 @@ public class MapCreation extends AddMonsterMap {
                     }
                 }
             }
-
             bigMap.put(currentRoom, tmp);
+            System.out.println(cornerRoom);
         }
 
         bufferedReader.close();
@@ -55,10 +63,9 @@ public class MapCreation extends AddMonsterMap {
 
     }
 
-//    public static void main(String[] args) throws IOException{
-//        MapCreation file = new MapCreation("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
-//        file.readMap();
-//    }
-
+    public static void main(String[] args) throws IOException{
+        MapCreation file = new MapCreation("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
+        file.readMap();
+    }
 }
 
