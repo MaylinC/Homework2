@@ -16,21 +16,21 @@ public class TakeCommand implements Command {
     public void execute(String cmd2) {
         if (player.getLocation().getCheckItem()) {
             if (player.getLocation().getItem().getName().equals("Excalibur Sword")) {
-                player.getLocation().getItem().setFound();
+                player.setFoundSword();
                 player.getLocation().takeOutItem();
             }
 
             else if (player.getLocation().getItem().getName().equals("IronBattle Armor")) {
-                player.getLocation().getItem().setFound();
+                player.setFoundArmor();
                 player.getLocation().takeOutItem();
             }
 
             else if (player.getLocation().getItem().getName().equals("Resurrection Stone")) {
-                player.getLocation().getItem().setFound();
+                player.setFoundStone();
                 player.getLocation().takeOutItem();
             }
             else if(player.getLocation().getItem().getName().equals("Wizard's Fury Truffle")) {
-                player.getInventory().takeMushroom(player.getLocation().getItem());
+                player.getInventory().takeMushroom((WizardFuryTruffle) player.getLocation().getItem());
                 player.getLocation().takeOutItem();
             }
             else {

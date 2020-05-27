@@ -10,10 +10,8 @@ import java.util.Map;
 public class CommandFactory {
 
     private static Map<String, Command> commandMap = new HashMap<>();
-    private static Participants participants;
-    private static Monsters monsters;
 
-    public static void playCommand(){ //static initialisation
+    public static void playCommand(Participants participants, Monsters monsters){ //static initialisation
         commandMap.put("exit", new ExitCommand());
         commandMap.put("take", new TakeCommand(participants));
         commandMap.put("drop", new DropCommand(participants));

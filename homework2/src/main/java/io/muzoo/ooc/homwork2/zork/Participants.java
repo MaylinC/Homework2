@@ -29,7 +29,7 @@ public class Participants implements GetProperties {
         this.inventory = new Inventory();
     }
 
-    public Participants(Integer hp, Integer attack, Integer defence) {
+    public Participants(Integer hp, Integer attack, Integer defence, ) {
         this.hp = hp;
         this.attack = attack;
         this.defence = defence;
@@ -105,5 +105,6 @@ public class Participants implements GetProperties {
     public void updateLocation(SetRoom location) {
         this.location = location;
     }
+
 
 }
