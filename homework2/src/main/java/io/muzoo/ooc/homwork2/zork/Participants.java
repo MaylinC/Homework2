@@ -2,8 +2,6 @@ package io.muzoo.ooc.homwork2.zork;
 
 import io.muzoo.ooc.homwork2.zork.item.*;
 
-import java.util.Set;
-
 public class Participants implements GetProperties {
 
     private Integer hp;
@@ -29,7 +27,7 @@ public class Participants implements GetProperties {
         this.inventory = new Inventory();
     }
 
-    public Participants(Integer hp, Integer attack, Integer defence, ) {
+    public Participants(Integer hp, Integer attack, Integer defence) {
         this.hp = hp;
         this.attack = attack;
         this.defence = defence;
@@ -105,6 +103,5 @@ public class Participants implements GetProperties {
     public void updateLocation(SetRoom location) {
         this.location = location;
     }
-
 
 }

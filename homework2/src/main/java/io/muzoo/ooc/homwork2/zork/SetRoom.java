@@ -3,8 +3,6 @@ package io.muzoo.ooc.homwork2.zork;
 import io.muzoo.ooc.homwork2.zork.creatures.Monsters;
 import io.muzoo.ooc.homwork2.zork.item.*;
 
-import javax.jws.Oneway;
-import java.io.IOException;
 import java.util.HashMap;
 
 public class SetRoom {    //set
@@ -24,10 +22,13 @@ public class SetRoom {    //set
 
     public String getDescription() { return description; }
 
-    private HashMap <String,String> setDirectionMap = new HashMap<>();
+    public HashMap <String,String> setDirectionMap = new HashMap<>();
 
     public void setWay(String direction, String neighbor ) {
         setDirectionMap.put(direction, neighbor);
+    }
+    public String getWayInfo(String direction) {
+        return setDirectionMap.get(direction);
     }
 
     public String getNeighbor(String direction) {

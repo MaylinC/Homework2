@@ -14,9 +14,9 @@ public abstract class AddMonsterMap {
 
     String fileName;
     String getFirstLine;
+    public String startRoom;
     public Map<String, SetRoom> bigMap = new HashMap<String, SetRoom>();
     public ArrayList<String> lstRoom = new ArrayList<>(); // get list of 20 rooms out
-
 
     public String checkMapFile() {
         if (getFirstLine.equals("ID:Map1")) {
