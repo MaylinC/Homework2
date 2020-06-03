@@ -27,6 +27,7 @@ public class SetRoom {    //set
     public void setWay(String direction, String neighbor ) {
         setDirectionMap.put(direction, neighbor);
     }
+
     public String getWayInfo(String direction) {
         return setDirectionMap.get(direction);
     }
@@ -38,6 +39,18 @@ public class SetRoom {    //set
     public void generateMonster(Monsters monsters) {
         this.monsters = monsters;
         checkMonster = true;
+    }
+
+    public Boolean getCheckMonster() {
+        return this.checkMonster;
+    }
+
+    public Boolean setCheckMonster() {
+        return this.checkMonster = true;
+    }
+
+    public Monsters getMonsters() {
+        return monsters;
     }
 
     public void generateItem(DeathlyItem item) {
@@ -62,18 +75,6 @@ public class SetRoom {    //set
 
     public Boolean setCheckItem() {
         return this.checkItem = true;
-    }
-
-    public Boolean getCheckMonster() {
-        return this.checkMonster;
-    }
-
-    public Boolean setCheckMonster() {
-        return this.checkMonster = true;
-    }
-
-    public Monsters getMonsters() {
-        return monsters;
     }
 
 }

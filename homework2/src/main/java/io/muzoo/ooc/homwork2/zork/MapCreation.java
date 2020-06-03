@@ -13,7 +13,7 @@ public class MapCreation extends AddMonsterMap {
         this.fileName = fileName;
     }
 
-    public Map<String, SetRoom> readMap(String fileName) throws IOException {
+    public void readMap(String fileName) throws IOException {
 
         FileReader reader = new FileReader(fileName);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
@@ -25,9 +25,9 @@ public class MapCreation extends AddMonsterMap {
 
             int count = 0;
             String currentRoom = line.split(":")[0];
-            lstRoom.add(currentRoom);
+            lstRoom.add(currentRoom); // put every room into the list
 
-            if (currentRoom.equals("startRoom")) {
+            if (currentRoom.equals("startRoom")) { // keep the start room to use later
                 String start = line.split(":")[1].split("-")[0];
                 startRoom = start;
             }
@@ -64,7 +64,6 @@ public class MapCreation extends AddMonsterMap {
         }
 
         bufferedReader.close();
-        return bigMap;
 
     }
 

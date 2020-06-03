@@ -18,14 +18,14 @@ public abstract class AddMonsterMap {
     public Map<String, SetRoom> bigMap = new HashMap<String, SetRoom>();
     public ArrayList<String> lstRoom = new ArrayList<>(); // get list of 20 rooms out
 
-    public String checkMapFile() {
-        if (getFirstLine.equals("ID:Map1")) {
-            return "/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1";
-        }
-        else {
-            return "/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map2";
-        }
-    }
+//    public String checkMapFile() {
+//        if (getFirstLine.equals("ID:Map1")) {
+//            return "/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1";
+//        }
+//        else {
+//            return "/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map2";
+//        }
+//    }
 
     public ArrayList<String> randRoom(Integer numOfRoom) { //random room that we want to put monster in and input as how many room
         int num = 0;

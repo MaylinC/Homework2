@@ -17,21 +17,29 @@ public class Game {
     private Boolean existGame;
     private Parser parser;
     private GetCommand command;
-    private Boolean bossDestroyed;
+ //   private Boolean bossDestroyed;
     private Participants player;
     private SetRoom currentRoom;
 
-    public void Game(CommandFactory commandFactory) {
+    public Game(CommandFactory commandFactory) {
         parser = new Parser();
         this.commandFactory = commandFactory;
         this.quit = false;
         this.existGame = false;
-        this.bossDestroyed = false;
+  //      this.bossDestroyed = false;
         command = new GetCommand();
     }
 
     public void printWelcome() {
         System.out.println("Welcome to Zork, enjoy your game !!!");
+    }
+
+    public void constructMap(String path) throws IOException { //
+        map.readMap(path);
+    }
+
+    public void setPlayer(Participants player) {
+        this.player = player;
     }
 
     public String currentLocationData() {
@@ -66,40 +74,35 @@ public class Game {
 
         while(!existGame) {
 
-            map.readMap("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
+            CommandFactory.allCommand(player, monsters, map);
             command.getCommand(parser,commandFactory);
-            commandFactory.allCommand(player, monsters);
+
+            constructMap("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
+
+            setPlayer(new Participants());
 
             // quit – end the current game and return to command prompt to let user choose the map or load from saved point again.
+            currentRoom = map.bigMap.get(map.startRoom);
+            player.updateLocation(currentRoom);
+            map.randMonster();
+            map.randItem();
+            map.setDeathlyHallow();
+            map.setBoss();
+            currentLocationData();
 
-            while (quit) {
+            command.getCommand(parser,commandFactory);
+            commandFactory.allCommand(player, monsters, map);
 
-                currentRoom = map.bigMap.get(map.startRoom);
-                player.updateLocation(currentRoom);
-                map.randMonster();
-                map.randItem();
-                map.setDeathlyHallow();
-                map.setBoss();
-                currentLocationData();
+            if (player.getHp() <= 0) {
+                System.out.println("You loss and been defeated by Basilisk!!");
+                quit = false;
+            }
 
-                command.getCommand(parser,commandFactory);
-                commandFactory.allCommand(player, monsters);
-
-                if (player.getHp() <= 0) {
-                    System.out.println("You loss and been defeated by Basilisk!!");
-                    quit = false;
-                }
-
-                if (monsters.getName().equals("Basilisk")) {
-                    if(monsters.getHp() <= 0) {
-                        System.out.println("You win, Basilisk has been defeated");
-                    }
-
+            if (monsters.getName().equals("Basilisk")) {
+                if(monsters.getHp() <= 0) {
+                    System.out.println("You win, Basilisk has been defeated");
                 }
             }
         }
-
-        System.out.println("Thank you for playing. Good bye.");
-
     }
 }

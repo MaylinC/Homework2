@@ -6,6 +6,8 @@ import io.muzoo.ooc.homwork2.zork.command.GetCommand;
 import io.muzoo.ooc.homwork2.zork.command.Parser;
 import io.muzoo.ooc.homwork2.zork.creatures.Monsters;
 
+import java.io.IOException;
+
 public class Combat {
 
     private Participants player;
@@ -22,7 +24,7 @@ public class Combat {
         command = new GetCommand();
     }
 
-    public void battle() {
+    public void battle() throws IOException {
         System.out.println(monster.getName() + "has appeared!!!!");
         System.out.println("Your HP: " + player.getHp());
         System.out.println(monster.getName() + "'s HP: " + monster.getHp());

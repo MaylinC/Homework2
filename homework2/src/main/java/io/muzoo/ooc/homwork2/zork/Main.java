@@ -11,7 +11,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Game game = new Game();
+        CommandFactory commandFactory = new CommandFactory();
+        Game game = new Game(commandFactory);
         game.play();
 
     }
