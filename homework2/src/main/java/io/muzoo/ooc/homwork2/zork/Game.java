@@ -84,7 +84,7 @@ public class Game {
             map.setBoss();
             currentLocationData();
 
-            CommandFactory.allCommand(player, map, commandFactory);
+            CommandFactory.allCommand(player, map, commandFactory, currentRoom);
             command.getCommand(parser, commandFactory);
 
             // quit – end the current game and return to command prompt to let user choose the map or load from saved point again.

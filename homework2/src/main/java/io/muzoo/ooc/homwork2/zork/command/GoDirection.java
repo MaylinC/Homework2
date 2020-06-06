@@ -10,21 +10,33 @@ public class GoDirection implements Command {
 
     private Participants participants;
     private SetRoom setRoom;
+    private MapCreation mapCreation;
     private SetRoom currentRoom;
 
-    public GoDirection(Participants participants, SetRoom currentRoom) {
+    public GoDirection(Participants participants, SetRoom currentRoom, MapCreation mapCreation) {
         this.participants = participants;
         this.currentRoom = currentRoom;
+        this.mapCreation = mapCreation;
     }
 
     @Override
     public void execute(String cmd2) {
         if(cmd2.equals("north")) {
             String nextRoom = currentRoom.getNeighbor(cmd2);
-            participants.updateLocation(nextRoom);
+            participants.updateLocation(mapCreation.bigMap.get(nextRoom));
         }
-
-
+        else if (cmd2.equals("west")) {
+            String nextRoom = currentRoom.getNeighbor(cmd2);
+            participants.updateLocation(mapCreation.bigMap.get(nextRoom));
+        }
+        else if (cmd2.equals("east")) {
+            String nextRoom = currentRoom.getNeighbor(cmd2);
+            participants.updateLocation(mapCreation.bigMap.get(nextRoom));
+        }
+        else {
+            String nextRoom = currentRoom.getNeighbor(cmd2);
+            participants.updateLocation(mapCreation.bigMap.get(nextRoom));
+        }
     }
 
     @Override
