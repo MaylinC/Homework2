@@ -12,7 +12,6 @@ public class Game {
 
     private CommandFactory commandFactory;
     private MapCreation map;
-    private Monsters monsters;
     private Boolean quit;
     private Boolean existGame;
     private Parser parser;
@@ -35,6 +34,7 @@ public class Game {
     }
 
     public void constructMap(String path) throws IOException { //
+        map = new MapCreation(path);
         map.readMap(path);
     }
 
@@ -71,17 +71,11 @@ public class Game {
     public void play() throws IOException {
 
         printWelcome();
+        constructMap("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
 
         while(!existGame) {
 
-            CommandFactory.allCommand(player, monsters, map);
-            command.getCommand(parser,commandFactory);
-
-            constructMap("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
-
             setPlayer(new Participants());
-
-            // quit – end the current game and return to command prompt to let user choose the map or load from saved point again.
             currentRoom = map.bigMap.get(map.startRoom);
             player.updateLocation(currentRoom);
             map.randMonster();
@@ -90,19 +84,20 @@ public class Game {
             map.setBoss();
             currentLocationData();
 
-            command.getCommand(parser,commandFactory);
-            commandFactory.allCommand(player, monsters, map);
+            CommandFactory.allCommand(player, map, commandFactory);
+            command.getCommand(parser, commandFactory);
+
+            // quit – end the current game and return to command prompt to let user choose the map or load from saved point again.
 
             if (player.getHp() <= 0) {
                 System.out.println("You loss and been defeated by Basilisk!!");
                 quit = false;
             }
 
-            if (monsters.getName().equals("Basilisk")) {
-                if(monsters.getHp() <= 0) {
-                    System.out.println("You win, Basilisk has been defeated");
-                }
-            }
+//            if (currentRoom.getMonsters().getName().equals("Basilisk")) {
+//                if(currentRoom.getMonsters().getHp() <= 0) {
+//                    System.out.println("You win, Basilisk has been defeated");
+//                }
         }
     }
 }

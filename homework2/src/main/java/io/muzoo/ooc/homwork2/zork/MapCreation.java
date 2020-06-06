@@ -46,16 +46,16 @@ public class MapCreation extends AddMonsterMap {
                     if (!separateNeigh[inx].equals("#") && !separateNeigh[inx].equals("*")) {
                         count = 0;
                         if (inx == 0) {
-                            tmp.setWay("North", separateNeigh[0]);
+                            tmp.setWay("north", separateNeigh[0]);
                         }
                         if (inx == 1) {
-                            tmp.setWay("West", separateNeigh[1]);
+                            tmp.setWay("west", separateNeigh[1]);
                         }
                         if (inx == 2) {
-                            tmp.setWay("East", separateNeigh[2]);
+                            tmp.setWay("east", separateNeigh[2]);
                         }
                         if (inx == 3) {
-                            tmp.setWay("South", separateNeigh[3]);
+                            tmp.setWay("south", separateNeigh[3]);
                         }
                     }
                 }

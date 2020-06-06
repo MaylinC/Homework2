@@ -1,9 +1,6 @@
 package io.muzoo.ooc.homwork2.zork;
 
-import io.muzoo.ooc.homwork2.zork.command.Command;
-import io.muzoo.ooc.homwork2.zork.command.CommandFactory;
-import io.muzoo.ooc.homwork2.zork.command.GetCommand;
-import io.muzoo.ooc.homwork2.zork.command.Parser;
+import io.muzoo.ooc.homwork2.zork.command.*;
 import io.muzoo.ooc.homwork2.zork.creatures.Monsters;
 
 import java.io.IOException;
@@ -16,7 +13,7 @@ public class Combat {
     private CommandFactory commandFactory;
     private GetCommand command;
 
-    public Combat(Participants player, Monsters monster, CommandFactory commandFactory, GetCommand command) {
+    public Combat(Participants player, Monsters monster, CommandFactory commandFactory) {
         this.player = player;
         this.monster = monster;
         this.commandFactory = commandFactory;
@@ -28,7 +25,8 @@ public class Combat {
         System.out.println(monster.getName() + "has appeared!!!!");
         System.out.println("Your HP: " + player.getHp());
         System.out.println(monster.getName() + "'s HP: " + monster.getHp());
-        while (monster.getHp() > 0 || player.getHp() > 0) {
+
+        while (monster.getHp() > 0 && player.getHp() > 0) {
 
             System.out.println("What would you want to do?");
             System.out.println("> attack");
@@ -50,6 +48,12 @@ public class Combat {
                 currentHp += 2;
                 player.updateHP(currentHp);
             }
+        }
+        if (monster.getHp() <= 0) {
+            System.out.println("you defeated " + monster.getName());
+        }
+        if (player.getHp() <= 0) {
+            System.out.println("you get defeated by " + monster.getName());
         }
     }
 }

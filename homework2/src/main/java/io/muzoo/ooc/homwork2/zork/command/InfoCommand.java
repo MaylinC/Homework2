@@ -10,7 +10,7 @@ public class InfoCommand implements Command {
         this.participants = participants;
     }
     @Override
-    public void execute(String cmd2) {
+    public void execute(String cmd) {
 
         System.out.println("Your current HP: " + participants.getHp());
         System.out.println("Your current Attack Damage: " + participants.getAttack());

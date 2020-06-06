@@ -32,18 +32,20 @@ public abstract class AddMonsterMap {
         ArrayList<String> randRoomLst = new ArrayList<>();
         while (num <= numOfRoom) {
             Random rand = new Random();
-            int indexRand = rand.nextInt(20);
-            if (!randRoomLst.contains(lstRoom.get(indexRand)))
+            int indexRand = rand.nextInt(20);  // not include 20 , 0-19
+
+            if (!randRoomLst.contains(lstRoom.get(indexRand))) {
                 randRoomLst.add(lstRoom.get(indexRand));
-            num++;
+                num++;
+            }
         }
         return randRoomLst;
     }
 
     public void randMonster() { //random monster into 10 room but not in abyss
         double rand = Math.random();
-        ArrayList<String> rmLst = randRoom(10);
-        for (int num = 0; num <= 10; num++) {
+        ArrayList<String> rmLst = randRoom(11);  // 11 room
+        for (int num = 0; num < 11; num++) { //0-10;
             if (!rmLst.get(num).equals("abyssToHell")) {
                 if (rand <= 0.33) {
                     bigMap.get(rmLst.get(num)).generateMonster(new Skeleton());
@@ -62,7 +64,7 @@ public abstract class AddMonsterMap {
     public void randItem() { //random mushroom and knife into 14 room but not ......
         double rand = Math.random();
         ArrayList<String> rmLst = randRoom(14);
-        for (int num = 0; num <= 14; num++) {
+        for (int num = 0; num < 14; num++) {
             if (!rmLst.get(num).equals("abyssToHell") && !rmLst.get(num).equals("crazyMazed")
                     && !rmLst.get(num).equals("the7Seas") && !rmLst.get(num).equals("bloodStream")) {
                 if(rand <= 0.70) {

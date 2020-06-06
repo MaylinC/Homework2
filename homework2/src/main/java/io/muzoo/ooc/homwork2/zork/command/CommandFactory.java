@@ -10,9 +10,9 @@ import java.util.Map;
 
 public class CommandFactory {
 
-    private static Map<String, Command> commandMap = new HashMap<>();
+    public static Map<String, Command> commandMap = new HashMap<>();
 
-    public static void allCommand(Participants participants, Monsters monsters, MapCreation mapCreation){ //static initialisation
+    public static void allCommand(Participants participants, MapCreation mapCreation, CommandFactory commandFactory){ //static initialisation
 //        commandMap.put("exit", new ExitCommand());
         commandMap.put("take", new TakeCommand(participants));
         commandMap.put("drop", new DropCommand(participants));
@@ -21,10 +21,10 @@ public class CommandFactory {
         commandMap.put("info", new InfoCommand(participants));
 //        commandMap.put("play"), new PlayCommand();
 //        commandMap.put("help", new HelpCommand());
-        commandMap.put("attack", new AttackCommand(participants, monsters));
+        commandMap.put("initiateBattle", new InitiateBattleCommand(commandFactory, participants));
     }
 
-    public static Command getCommand(String cmd) {
+    public Command getCommand(String cmd) {
         return commandMap.get(cmd);
 
     }

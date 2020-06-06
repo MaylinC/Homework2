@@ -19,9 +19,9 @@ public class Skeleton extends Monsters {
     @Override
     public Integer strike() {
         double ProbAttack = Math.random(); //0-1;
-        if (ProbAttack <= 0.03) {
+        if (ProbAttack <= 0.02) {
             System.out.println("Skeletons resurrected itself, recovered and have all full HP");
-            hp = maxHp;
+            hp =+ 30;
             return 0;
 
         } else if (ProbAttack <= 0.53) {
