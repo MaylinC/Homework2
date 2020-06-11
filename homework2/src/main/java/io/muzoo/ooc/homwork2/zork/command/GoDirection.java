@@ -20,25 +20,24 @@ public class GoDirection implements Command {
 
     @Override
     public void execute(String cmd2) {
-        if(cmd2.equals("north")) {
-            String nextRoom = participants.getLocation().getNeighbor(cmd2);
-            participants.updateLocation(bigMap.get(nextRoom));
-            System.out.println("north" + nextRoom);
-        }
-        else if (cmd2.equals("west")) {
-            String nextRoom = participants.getLocation().getNeighbor(cmd2);
-            participants.updateLocation(bigMap.get(nextRoom));
-            System.out.println("west" + nextRoom);
-        }
-        else if (cmd2.equals("east")) {
-            String nextRoom = participants.getLocation().getNeighbor(cmd2);
-            participants.updateLocation(bigMap.get(nextRoom));
-            System.out.println("east" + nextRoom);
+        if (participants.getLocation().getNeighbor(cmd2) != null) {
+            switch (cmd2) {
+                case "north":
+                case "east":
+                case "west":
+                case "south": {
+                    String nextRoom = participants.getLocation().getNeighbor(cmd2);
+                    participants.updateLocation(bigMap.get(nextRoom));
+                    System.out.println(nextRoom);
+                    break;
+                }
+                default:
+                    System.out.println("This direction is not available");
+                    break;
+            }
         }
         else {
-            String nextRoom = participants.getLocation().getNeighbor(cmd2);
-            participants.updateLocation(bigMap.get(nextRoom));
-            System.out.println("south" + nextRoom);
+            System.out.println("This is the corner of the room");
         }
     }
 

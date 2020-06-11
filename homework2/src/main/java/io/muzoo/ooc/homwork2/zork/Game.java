@@ -24,6 +24,7 @@ public class Game {
     private LimitCommand limitCommand;
     private Participants player;
     private SetRoom currentRoom;
+    private SetRoom previousRoom;
     private Boolean defeatedBoss;
 
 
@@ -66,10 +67,6 @@ public class Game {
         commandFactory.getCommandMap().put("map", new MapCommand(mapCreation));
         mapExist = true;
         map = mapCreation.getMap();
-        mapCreation.randMonster();
-        mapCreation.randItem();
-        mapCreation.setDeathlyHallow();
-        mapCreation.setBoss();
     }
 
     public Map<String, SetRoom> getBigMap() {
@@ -94,6 +91,11 @@ public class Game {
 
     public Boolean getQuit() {
         return quit;
+    }
+
+    public SetRoom getPreviousRoom() {
+        currentRoom = previousRoom;
+        return previousRoom;
     }
 
     public void setQuit(boolean bol) {
@@ -160,7 +162,13 @@ public class Game {
             command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "MainMenu");
 
             while (mapExist||defeatedBoss) {
+
+                command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "Game");
                 currentLocationData();
+                mapCreation.randMonster();
+                mapCreation.randItem();
+                mapCreation.setDeathlyHallow();
+                mapCreation.setBoss();
                 bossDeathYet();
                 if (player.getHp() <= 0) {
                     System.out.println("You loss and been defeated by Basilisk!!");
