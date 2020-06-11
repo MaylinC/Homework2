@@ -9,17 +9,19 @@ import java.io.IOException;
 public class InitiateBattleCommand implements Command {
     private CommandFactory commandFactory;
     private Participants participants;
+    private LimitCommand limitCommand;
 
-    public InitiateBattleCommand(CommandFactory commandFactory, Participants participants) {
+    public InitiateBattleCommand(CommandFactory commandFactory, Participants participants, LimitCommand limitCommand) {
         this.participants = participants;
         this.commandFactory = commandFactory;
+        this.limitCommand = limitCommand;
     }
     @Override
     public void execute(String arg) throws IOException {
         if(participants.getLocation().getCheckMonster()) {
             Monsters monsters = participants.getLocation().getMonsters();
-            CommandFactory.commandMap.put("attack", new AttackCommand(participants, monsters)); // create attack command whenInitiateBattleCommand are called
-            Combat combat = new Combat(participants,monsters,commandFactory);
+            commandFactory.getCommandMap().put("attack", new AttackCommand(participants, monsters)); // create attack command whenInitiateBattleCommand are called
+            Combat combat = new Combat(participants,monsters,commandFactory,limitCommand);
             combat.battle();
         }
         else {

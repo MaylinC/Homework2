@@ -12,11 +12,13 @@ public class Combat {
     private Parser parser;
     private CommandFactory commandFactory;
     private GetCommand command;
+    private LimitCommand limitCommand;
 
-    public Combat(Participants player, Monsters monster, CommandFactory commandFactory) {
+    public Combat(Participants player, Monsters monster, CommandFactory commandFactory, LimitCommand limitCommand) {
         this.player = player;
         this.monster = monster;
         this.commandFactory = commandFactory;
+        this.limitCommand = limitCommand;
         parser = new Parser();
         command = new GetCommand();
     }
@@ -32,28 +34,37 @@ public class Combat {
             System.out.println("> attack");
             System.out.println("> take");
 
-            command.getCommand(parser, commandFactory);
+            command.getCommand(parser, commandFactory, limitCommand.getCanBeUsedCommand(), "Attack");
 
             if (monster.getName().equals("Cannibal Tribe")) {
                 Integer damageTaken = monster.strike();
                 Integer currentHp = player.getHp() - damageTaken;
                 System.out.println("Your current HP: " + currentHp);
                 currentHp += 2;
-                player.updateHP(currentHp);
+                if (player.getHp() < player.getMaxHp()) {
+                    player.updateHP(currentHp);
+                }
             } else {
                 Integer damageTaken = monster.strike();
                 double defencePercent = (1 - (double) player.getDefence() / 100); // so attack will hit 70% if defence is 30%
                 Integer currentHp = (player.getHp() - (damageTaken * (int) defencePercent));
                 System.out.println("Your current HP: " + currentHp);
                 currentHp += 2;
-                player.updateHP(currentHp);
+                if (player.getHp() < player.getMaxHp()) {
+                    player.updateHP(currentHp);
+                }
             }
-        }
-        if (monster.getHp() <= 0) {
-            System.out.println("you defeated " + monster.getName());
-        }
-        if (player.getHp() <= 0) {
-            System.out.println("you get defeated by " + monster.getName());
+            if (monster.getName().equals("Basilisk")) {
+                if (monster.getHp() <= 0) {
+
+                }
+            }
+            if (monster.getHp() <= 0) {
+                System.out.println("you defeated " + monster.getName());
+            }
+            if (player.getHp() <= 0) {
+                System.out.println("you get defeated by " + monster.getName());
+            }
         }
     }
 }

@@ -14,7 +14,6 @@ public abstract class Monsters {   /// monster and boss
     public String description;
     public String name;
 
-
     public Integer getHp() {
         return this.hp;
     }

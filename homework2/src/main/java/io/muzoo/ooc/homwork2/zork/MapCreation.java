@@ -1,6 +1,7 @@
 package io.muzoo.ooc.homwork2.zork;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
@@ -26,6 +27,11 @@ public class MapCreation extends AddMonsterMap {
             int count = 0;
             String currentRoom = line.split(":")[0];
             lstRoom.add(currentRoom); // put every room into the list
+
+            if (currentRoom.equals("ID")) {
+                String idMap = line.split(":")[1].split("-")[0];
+                mapId = idMap;
+            }
 
             if (currentRoom.equals("startRoom")) { // keep the start room to use later
                 String start = line.split(":")[1].split("-")[0];
@@ -62,9 +68,11 @@ public class MapCreation extends AddMonsterMap {
                 bigMap.put(currentRoom, tmp);
             }
         }
-
         bufferedReader.close();
+    }
 
+    public Map<String, SetRoom> getMap() {
+        return bigMap;
     }
 
     public void asciiMap() {

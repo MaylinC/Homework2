@@ -50,9 +50,14 @@ public class AttackCommand implements Command{
 
             System.out.println("You attacked a " + monster.getName());
             double defencePercent = (1 - (double) monster.getDefence() / 100);
+            System.out.println(defencePercent);
+            System.out.println(monster.getHp());
             Integer monsterCurrentHp = (monster.getHp() - (damageDealt() * (int) defencePercent));
-            System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);
+            System.out.println(monsterCurrentHp);
+            System.out.println(monster.getHp());
             monster.updateHP(monsterCurrentHp);
+
+            System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);
             participants.updateAttack(participants.getAttack() - participants.getKnife().getAttackDamage());
         }
 

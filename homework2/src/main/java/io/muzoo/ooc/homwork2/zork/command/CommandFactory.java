@@ -1,5 +1,6 @@
 package io.muzoo.ooc.homwork2.zork.command;
 
+import io.muzoo.ooc.homwork2.zork.Game;
 import io.muzoo.ooc.homwork2.zork.MapCreation;
 import io.muzoo.ooc.homwork2.zork.Participants;
 import io.muzoo.ooc.homwork2.zork.SetRoom;
@@ -13,21 +14,29 @@ public class CommandFactory {
 
     public static Map<String, Command> commandMap = new HashMap<>();
 
-    public static void allCommand(Participants participants, MapCreation mapCreation, CommandFactory commandFactory, SetRoom setRoom){ //static initialisation
-//        commandMap.put("exit", new ExitCommand());
+    public static void allCommand(Game game){ //static initialisation
+        Participants participants = game.getPlayer();
+        Map<String, SetRoom> bigMap = game.getBigMap();
+        CommandFactory commandFactory = game.getCommandFactory();
+        LimitCommand limitCommand = game.getLimitCommand();
+        commandMap.put("exit", new ExitCommand(game));
+        commandMap.put("quit", new QuitCommand(game));
         commandMap.put("take", new TakeCommand(participants));
         commandMap.put("drop", new DropCommand(participants));
-        commandMap.put("go", new GoDirection(participants, setRoom, mapCreation));
-        commandMap.put("map", new MapCommand(mapCreation));
+        commandMap.put("go", new GoDirection(participants,bigMap));
         commandMap.put("info", new InfoCommand(participants));
-//        commandMap.put("play"), new PlayCommand();
-//        commandMap.put("help", new HelpCommand());
-        commandMap.put("initiateBattle", new InitiateBattleCommand(commandFactory, participants));
+        commandMap.put("play", new PlayCommand(game));
+        commandMap.put("help", new HelpCommand(commandFactory));
+        commandMap.put("initiateBattle", new InitiateBattleCommand(commandFactory, participants, limitCommand));
     }
 
     public Command getCommand(String cmd) {
         return commandMap.get(cmd);
 
+    }
+
+    public Map<String, Command> getCommandMap() {
+        return commandMap;
     }
 
     public Boolean checkContainCommand(String cmd1){
