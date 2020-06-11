@@ -21,13 +21,8 @@ public class CommandFactory {
         LimitCommand limitCommand = game.getLimitCommand();
         commandMap.put("exit", new ExitCommand(game));
         commandMap.put("quit", new QuitCommand(game));
-        commandMap.put("take", new TakeCommand(participants));
-        commandMap.put("drop", new DropCommand(participants));
-        commandMap.put("go", new GoDirection(participants,bigMap));
-        commandMap.put("info", new InfoCommand(participants));
-        commandMap.put("play", new PlayCommand(game));
+        commandMap.put("play", new PlayCommand(game,commandFactory));
         commandMap.put("help", new HelpCommand(commandFactory));
-        commandMap.put("initiateBattle", new InitiateBattleCommand(commandFactory, participants, limitCommand));
     }
 
     public Command getCommand(String cmd) {
