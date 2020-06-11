@@ -213,7 +213,7 @@
       <workItem from="1591460675844" duration="349000" />
       <workItem from="1591619360773" duration="7260000" />
       <workItem from="1591845157836" duration="2000" />
-      <workItem from="1591872706473" duration="17042000" />
+      <workItem from="1591872706473" duration="19464000" />
     </task>
     <task id="LOCAL-00001" summary="hw2">
       <created>1590222633026</created>
@@ -369,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591887884883</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fixing GoDirection">
+      <created>1591890486774</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591890486774</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,6 +414,7 @@
     <MESSAGE value="Doing go Command" />
     <MESSAGE value="fixing monsters" />
     <MESSAGE value="refector game" />
-    <option name="LAST_COMMIT_MESSAGE" value="refector game" />
+    <MESSAGE value="fixing GoDirection" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing GoDirection" />
   </component>
 </project>

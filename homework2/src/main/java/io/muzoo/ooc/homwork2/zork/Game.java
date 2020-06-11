@@ -67,6 +67,10 @@ public class Game {
         commandFactory.getCommandMap().put("map", new MapCommand(mapCreation));
         mapExist = true;
         map = mapCreation.getMap();
+        mapCreation.randMonster();
+        mapCreation.randItem();
+        mapCreation.setDeathlyHallow();
+        mapCreation.setBoss();
     }
 
     public Map<String, SetRoom> getBigMap() {
@@ -112,6 +116,10 @@ public class Game {
 
     public Participants getPlayer() {
         return player;
+    }
+
+    public MapCreation getMapCreation() {
+        return mapCreation;
     }
 
     public CommandFactory getCommandFactory(){
@@ -165,10 +173,6 @@ public class Game {
 
                 command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "Game");
                 currentLocationData();
-                mapCreation.randMonster();
-                mapCreation.randItem();
-                mapCreation.setDeathlyHallow();
-                mapCreation.setBoss();
                 bossDeathYet();
                 if (player.getHp() <= 0) {
                     System.out.println("You loss and been defeated by Basilisk!!");
