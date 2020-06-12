@@ -75,6 +75,14 @@ public class MapCreation extends AddMonsterMap {
         return bigMap;
     }
 
+    public String getMapID() {
+        return mapId;
+    }
+
+    public String getStartRoom() {
+        return startRoom;
+    }
+
     public void asciiMap() {
 
         String nextEastRoom;
@@ -83,9 +91,9 @@ public class MapCreation extends AddMonsterMap {
 
         for (int row = 0; row < 5; row++) {
             String line = topConnerRoom + "  ";
-            leftConnerRoom = bigMap.get(cornerRoom).getNeighbor("South");
+            leftConnerRoom = bigMap.get(cornerRoom).getNeighbor("south");
             for (int col = 0; col <= 4; col++) {
-                nextEastRoom = bigMap.get(cornerRoom).getNeighbor("East");
+                nextEastRoom = bigMap.get(cornerRoom).getNeighbor("east");
                 if (nextEastRoom != null) {
                     cornerRoom = nextEastRoom;
                     line += " || " + cornerRoom;

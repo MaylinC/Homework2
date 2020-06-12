@@ -13,6 +13,7 @@ public class Combat {
     private CommandFactory commandFactory;
     private GetCommand command;
     private LimitCommand limitCommand;
+    private Boolean leave = false;
 
     public Combat(Participants player, Monsters monster, CommandFactory commandFactory, LimitCommand limitCommand) {
         this.player = player;
@@ -23,10 +24,15 @@ public class Combat {
         command = new GetCommand();
     }
 
+    public void setLeave() {
+        this.leave = true;
+    }
+
     public void battle() throws IOException {
         System.out.println(monster.getName() + "has appeared!!!!");
         System.out.println("Your HP: " + player.getHp());
         System.out.println(monster.getName() + "'s HP: " + monster.getHp());
+        System.out.println("In the battle Zone, Take care!!");
 
         while (monster.getHp() > 0 && player.getHp() > 0) {
 
@@ -35,6 +41,11 @@ public class Combat {
             System.out.println("> take");
 
             command.getCommand(parser, commandFactory, limitCommand.getCanBeUsedCommand(), "Attack");
+
+            if(leave) {
+                System.out.println("You are leaving the battle");
+                break;
+            }
 
             if (monster.getName().equals("Cannibal Tribe")) {
                 Integer damageTaken = monster.strike();
@@ -66,5 +77,6 @@ public class Combat {
                 System.out.println("you get defeated by " + monster.getName());
             }
         }
+        System.out.println("Out of battle Zone");
     }
 }

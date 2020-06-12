@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="042d62ac-5a4a-405e-af4c-a9bbe32959dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/EatCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/LeaveBattleCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -10,8 +12,24 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/Participants.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/Participants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/homwork2/zork/item/Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Map1" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Map1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/AddMonsterMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/AddMonsterMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Combat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/GoDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/GoDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/MapCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/MapCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Participants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/Participants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/AttackCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/AttackCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/DropCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/DropCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/GetCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/GetCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/InitiateBattleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/InitiateBattleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/LimitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/LimitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/PlayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/PlayCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/TakeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/command/TakeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/WizardFuryTruffle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/homwork2/zork/item/WizardFuryTruffle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Map1" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Map1" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +231,8 @@
       <workItem from="1591460675844" duration="349000" />
       <workItem from="1591619360773" duration="7260000" />
       <workItem from="1591845157836" duration="2000" />
-      <workItem from="1591872706473" duration="19464000" />
+      <workItem from="1591872706473" duration="22145000" />
+      <workItem from="1591960899233" duration="14815000" />
     </task>
     <task id="LOCAL-00001" summary="hw2">
       <created>1590222633026</created>
@@ -376,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591890486774</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fixing buh in oneRoom">
+      <created>1591893376042</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1591893376042</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,6 +441,7 @@
     <MESSAGE value="fixing monsters" />
     <MESSAGE value="refector game" />
     <MESSAGE value="fixing GoDirection" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing GoDirection" />
+    <MESSAGE value="fixing buh in oneRoom" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing buh in oneRoom" />
   </component>
 </project>

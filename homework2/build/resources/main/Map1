@@ -9,10 +9,10 @@ crazyMazed:A room of the most impossible mazed designed by Hades himself-creepyC
 room666:A room where the floor, walls and ceilings appear to drain your soul and suffocate you to hell-deathStar,darkForest,#,prohibitedArea
 abyssToHell:A room that you need to watch where you step, or you may fall into the depths of hell-theNinthCircle,#,athenaeum,cursedRoom
 roomOfTorture:A room that hides a hidden treasure as you need to survive torture from a skeleton creature-athenaeum,cursedRoom,dungeonChamber,magicTunnel
-deathStar:A room, in the middle; a floating orb of light that wipes anyone out of existence to those who are drawn close to it-prohibitedArea,dungeonChamber,#,abandonClockTower
+deathStar:A room, in the middle; a floating orb of light that wipes anyone out of existence to those who are drawn close to it-#,spookyHallway,#,room666
 iceGate:The entrance to the coldest place of hell-dungeonChamber,magicTunnel,abandonClockTower,#
-creepyCanyon:A canyon that is filled with all types of creepy humongous insects-#,CellsOfMystery,spookyHallway,crazyMazed
-theNinthCircle:A room where the most oldest and the most ferocious hydra lives, to survive it will take ever ounce of courage and energy-CellsOfMystery,#,crazyMazed,abyssToHell
+creepyCanyon:A canyon that is filled with all types of creepy humongous insects-#,cellsOfMystery,spookyHallway,crazyMazed
+theNinthCircle:A room where the most oldest and the most ferocious hydra lives, to survive it will take ever ounce of courage and energy-cellsOfMystery,#,crazyMazed,abyssToHell
 cursedRoom:A room filled with the dolls that haunt little children in past centuries-abyssToHell,#,roomOfTorture,bloodStream
 magicTunnel:A tunnel that bends and twists the will and mind of any living thing-roomOfTorture,bloodStream,iceGate,#
 abandonClockTower:An old clock tower that used to WATCH over the beautiful Kingdom of Narnia-the7Seas,iceGate,#,*

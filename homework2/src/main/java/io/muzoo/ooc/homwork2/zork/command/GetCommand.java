@@ -14,7 +14,7 @@ public class GetCommand {
             commandFactory.getCommand(cmd1).execute(cmd2);
         }
         else {
-            System.out.println("Command can't be used");
+            System.out.println("Command can't be used, try again");
         }
     }
 }

@@ -16,6 +16,6 @@ public class DropCommand implements Command {
 
     @Override
     public String getDescription() {
-        return "You have dropped your healing mushroom";
+        return "Use this command to drop unwanted items in your inventory";
     }
 }

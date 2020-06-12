@@ -31,6 +31,7 @@ public class Inventory {
         if (!emp) {
             bag.remove(bag.size() - 1);
             countMushroom -= 1;
+            System.out.println("You have dropped your healing mushroom");
         } else {
             System.out.println("Your bag is empty, mushroom can't be remove!! (Get more Mushrooms)");
         }

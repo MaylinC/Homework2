@@ -65,7 +65,6 @@ public class AttackCommand implements Command{
             if (participants.getKnife().getFound()) {
                 participants.updateAttack(participants.getAttack() + participants.getKnife().getAttackDamage());
             }
-
             System.out.println("You attacked a " + monster.getName());
             Integer monsterCurrentHp = (monster.getHp() - damageDealt());
             System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);

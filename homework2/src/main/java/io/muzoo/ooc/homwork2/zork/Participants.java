@@ -27,10 +27,11 @@ public class Participants implements GetProperties {
         this.inventory = new Inventory();
     }
 
-    public Participants(Integer hp, Integer attack, Integer defence) {
+    public Participants(Integer hp, Integer attack, Integer defence, SetRoom location) {
         this.hp = hp;
         this.attack = attack;
         this.defence = defence;
+        this.location = location;
     }
 
     @Override
@@ -75,17 +76,17 @@ public class Participants implements GetProperties {
 
     public void setFoundStone() {
         resurrectionStone.setFound();
-        System.out.println("Now you have found one of the third object -Resurrection Stone- you have gain extra more HP");
+        System.out.println("Now you have found one of the third object -Resurrection Stone- you will gain extra more HP when you meet the boss");
     }
 
     public void setFoundSword() {
         excaliburSword.setFound();
-        System.out.println("Now you have found the most powerful sword -Sword of Excalibur- you can use this to defeat the boss");
+        System.out.println("Now you have found the most powerful sword -Sword of Excalibur- you can use this to defeat the boss, during battle zone with boss");
     }
 
     public void setFoundArmor() {
         armor.setFound();
-        System.out.println("You have found the strongest Armor suit in the realm -IronBattleArmor-, your defence have increase");
+        System.out.println("You have found the strongest Armor suit in the realm -IronBattleArmor-, your defence will increase automatically when you meet the boss");
     }
 
     public void updateHP (Integer alterHP) {

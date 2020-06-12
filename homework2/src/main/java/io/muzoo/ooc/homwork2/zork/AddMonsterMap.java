@@ -91,6 +91,6 @@ public abstract class AddMonsterMap {
 
     public void setBoss() {
         bigMap.get("abyssToHell").generateMonster(new Boss());
-        bigMap.get("abyssToHell").setCheckItem();
+        bigMap.get("abyssToHell").setCheckMonster();
     }
 }

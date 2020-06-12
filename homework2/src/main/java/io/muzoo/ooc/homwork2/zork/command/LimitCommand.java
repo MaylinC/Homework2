@@ -21,9 +21,12 @@ public class LimitCommand {
         menu.add("quit");
         attack.add("drop");
         attack.add("attack");
+        attack.add("eat");
+        attack.add("leave");
         attack.add("info");
         attack.add("take");
         duringGame.add("exist");
+        duringGame.add("eat");
         duringGame.add("drop");
         duringGame.add("take");
         duringGame.add("map");

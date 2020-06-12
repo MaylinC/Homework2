@@ -36,10 +36,8 @@ public class TakeCommand implements Command {
             else {
                 player.getLocation().getItem().setFound();
                 player.getLocation().takeOutItem();
+                System.out.println("You found one of the Knife Saver, it will be automatically use when you battling with Cannibal Tribe");
             }
-        }
-        else  {
-            System.out.println("There is not item in this room");
         }
     }
 

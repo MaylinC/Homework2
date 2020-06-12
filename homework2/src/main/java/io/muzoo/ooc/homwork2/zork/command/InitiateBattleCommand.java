@@ -19,9 +19,10 @@ public class InitiateBattleCommand implements Command {
     @Override
     public void execute(String arg) throws IOException {
         if(participants.getLocation().getCheckMonster()) {
-            Monsters monsters = participants.getLocation().getMonsters();
-            commandFactory.getCommandMap().put("attack", new AttackCommand(participants, monsters)); // create attack command whenInitiateBattleCommand are called
-            Combat combat = new Combat(participants,monsters,commandFactory,limitCommand);
+            Monsters monster = participants.getLocation().getMonsters();
+            Combat combat = new Combat(participants,monster,commandFactory,limitCommand);
+            commandFactory.getCommandMap().put("attack", new AttackCommand(participants, monster)); // create attack command whenInitiateBattleCommand are called
+            commandFactory.getCommandMap().put("leave", new LeaveBattleCommand(combat));
             combat.battle();
         }
         else {

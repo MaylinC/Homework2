@@ -27,8 +27,10 @@ public class PlayCommand implements Command {
             game.setPlayer(participants);
             System.out.println("Player is already created");
             participants.updateLocation(beginRoom);
-            System.out.println("You are at " + beginRoom.getDescription());
+            System.out.println("You current location is " + game.getCurrentStringRoom() + " : " + beginRoom.getDescription());
+            System.out.println("Available Direction: north west east south");
             commandFactory.getCommandMap().put("take", new TakeCommand(participants));
+            commandFactory.getCommandMap().put("eat", new EatCommand(participants));
             commandFactory.getCommandMap().put("drop", new DropCommand(participants));
             commandFactory.getCommandMap().put("initiateBattle", new InitiateBattleCommand(commandFactory, participants, game.getLimitCommand()));
             commandFactory.getCommandMap().put("go", new GoDirection(participants,game.getBigMap()));

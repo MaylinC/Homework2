@@ -81,6 +81,10 @@ public class Game {
         return currentRoom;
     }
 
+    public String getCurrentStringRoom() {
+        return mapCreation.startRoom;
+    }
+
     public Boolean getMapExist() {
         return mapExist;
     }
@@ -138,20 +142,22 @@ public class Game {
     public String currentLocationData() {
 
         StringBuilder data = new StringBuilder();
-        data.append("You are in " + player.getLocation().getDescription());
+        data.append("You are in " + player.getLocation().getDescription() + "\n");
         if (player.getLocation().getCheckMonster()) {
-            data.append("There is a " + player.getLocation().getMonsters().getName() + "in this current room");
+            data.append("There is a " + player.getLocation().getMonsters().getName() + " in this current room \n");
+            data.append("Type -initiateBattle- to start the battle with this monster \n");
         }
         else {
-            data.append("You are lucky! there's no Monster in this current room");
+            data.append("You are lucky! there's no Monster in this current room \n");
         }
         if (player.getLocation().getCheckItem()) {
-            data.append(player.getLocation().getItem().getName() + "appear in this room");
+            data.append(player.getLocation().getItem().getName()).append(" appear in this room \n");
+            data.append("Type -take- get the item \n");
         }
         else {
-            data.append("Too bad there's not item in this room");
+            data.append("Too bad there's not item in this room \n");
         }
-
+        data.append("Available Direction: \n");
         for (String direction: player.getLocation().setDirectionMap.keySet()) {
             if (player.getLocation().getWayInfo(direction) != null) {
                 data.append(direction);
@@ -165,6 +171,9 @@ public class Game {
 
         printWelcome();
 
+        System.out.println("Which map you want to play?");
+        System.out.println("Type the world play and follow with your map > Map1 , Map2");
+
         while(!quit) {
 
             command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "MainMenu");
@@ -172,7 +181,8 @@ public class Game {
             while (mapExist||defeatedBoss) {
 
                 command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "Game");
-                currentLocationData();
+                System.out.println(" ");
+                System.out.println(currentLocationData());
                 bossDeathYet();
                 if (player.getHp() <= 0) {
                     System.out.println("You loss and been defeated by Basilisk!!");
