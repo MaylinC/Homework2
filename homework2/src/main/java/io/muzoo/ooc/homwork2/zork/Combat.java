@@ -57,17 +57,12 @@ public class Combat {
                 }
             } else {
                 Integer damageTaken = monster.strike();
-                double defencePercent = (1 - (double) player.getDefence() / 100); // so attack will hit 70% if defence is 30%
+                double defencePercent = Math.toIntExact(Math.round(1 - (double) player.getDefence() / 100)); // so attack will hit 70% if defence is 30%
                 Integer currentHp = (player.getHp() - (damageTaken * (int) defencePercent));
                 System.out.println("Your current HP: " + currentHp);
                 currentHp += 2;
                 if (player.getHp() < player.getMaxHp()) {
                     player.updateHP(currentHp);
-                }
-            }
-            if (monster.getName().equals("Basilisk")) {
-                if (monster.getHp() <= 0) {
-
                 }
             }
             if (monster.getHp() <= 0) {

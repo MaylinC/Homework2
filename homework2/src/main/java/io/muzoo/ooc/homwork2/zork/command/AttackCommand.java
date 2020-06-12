@@ -37,7 +37,7 @@ public class AttackCommand implements Command{
             }
 
             System.out.println("You attacked Basilisk!!!!");
-            double defencePercent = (1 - (double) monster.getDefence() / 100);
+            double defencePercent = Math.toIntExact(Math.round(1 - (double) monster.getDefence() / 100));
             Integer monsterCurrentHp = (monster.getHp() - (damageDealt() * (int) defencePercent));
             System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);
             monster.updateHP(monsterCurrentHp);
@@ -49,7 +49,7 @@ public class AttackCommand implements Command{
             }
 
             System.out.println("You attacked a " + monster.getName());
-            double defencePercent = (1 - (double) monster.getDefence() / 100);
+            double defencePercent = Math.toIntExact(Math.round(1 - (double) monster.getDefence() / 100));
             System.out.println(defencePercent);
             System.out.println(monster.getHp());
             Integer monsterCurrentHp = (monster.getHp() - (damageDealt() * (int) defencePercent));
