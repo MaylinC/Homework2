@@ -21,7 +21,7 @@ public class PlayCommand implements Command {
     public void execute(String arg) throws IOException {
         if (arg.equals("Map1")) {
             game.chooseMap(arg);
-            beginRoom = game.getCurrentRoom();
+            beginRoom = game.getBigMap().get(game.getCurrentStringRoom());
             System.out.println("Map is build");
             Participants participants = new Participants();
             game.setPlayer(participants);
@@ -33,7 +33,6 @@ public class PlayCommand implements Command {
             commandFactory.getCommandMap().put("eat", new EatCommand(participants));
             commandFactory.getCommandMap().put("drop", new DropCommand(participants));
             commandFactory.getCommandMap().put("initiateBattle", new InitiateBattleCommand(commandFactory, participants, game.getLimitCommand()));
-            commandFactory.getCommandMap().put("go", new GoDirection(participants,game.getBigMap()));
             commandFactory.getCommandMap().put("info", new InfoCommand(participants));
         }
         else {

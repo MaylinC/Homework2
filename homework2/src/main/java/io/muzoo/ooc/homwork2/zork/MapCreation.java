@@ -19,6 +19,7 @@ public class MapCreation extends AddMonsterMap {
         FileReader reader = new FileReader(fileName);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
         getFirstLine = bufferedReader.readLine();
+        System.out.println(getFirstLine);
 
         String line = null;
 
@@ -28,17 +29,10 @@ public class MapCreation extends AddMonsterMap {
             String currentRoom = line.split(":")[0];
             lstRoom.add(currentRoom); // put every room into the list
 
-            if (currentRoom.equals("ID")) {
-                String idMap = line.split(":")[1].split("-")[0];
-                mapId = idMap;
-            }
-
             if (currentRoom.equals("startRoom")) { // keep the start room to use later
                 String start = line.split(":")[1].split("-")[0];
                 startRoom = start;
-            }
-
-            else {
+            } else {
                 String roomDescription = line.split(":")[1].split("-")[0];
                 String[] separateNeigh = line.split(":")[1].split("-")[1].split(",");
                 SetRoom tmp = new SetRoom(roomDescription);
@@ -75,12 +69,13 @@ public class MapCreation extends AddMonsterMap {
         return bigMap;
     }
 
-    public String getMapID() {
-        return mapId;
-    }
-
     public String getStartRoom() {
         return startRoom;
+    }
+
+    public String getMapID() {
+        String idMap = getFirstLine.split(":")[1];
+        return mapId = idMap;
     }
 
     public void asciiMap() {
@@ -102,7 +97,7 @@ public class MapCreation extends AddMonsterMap {
             if (leftConnerRoom != null) {
                 topConnerRoom = leftConnerRoom;
                 cornerRoom = leftConnerRoom;
-                line += "  " ;
+                line += "  ";
             }
 
             line += " || ";
@@ -112,9 +107,9 @@ public class MapCreation extends AddMonsterMap {
 
 //    public static void main(String[] args) throws IOException{
 //        MapCreation file = new MapCreation("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
-//        file.readMap();
+//        file.readMap("/Users/maylin/Desktop/ooc/homework2/src/main/resources/Map1");
 ////        file.asciiMap();
-
+//
 //    }
 }
 

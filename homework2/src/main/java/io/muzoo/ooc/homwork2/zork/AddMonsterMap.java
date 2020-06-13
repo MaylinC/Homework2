@@ -1,11 +1,8 @@
 package io.muzoo.ooc.homwork2.zork;
 
 
-import io.muzoo.ooc.homwork2.zork.creatures.Boss;
-import io.muzoo.ooc.homwork2.zork.creatures.CannibalTribe;
-import io.muzoo.ooc.homwork2.zork.creatures.DrunkBaboon;
+import io.muzoo.ooc.homwork2.zork.creatures.*;
 
-import io.muzoo.ooc.homwork2.zork.creatures.Skeleton;
 import io.muzoo.ooc.homwork2.zork.item.*;
 
 import java.util.*;
@@ -69,6 +66,33 @@ public abstract class AddMonsterMap {
     }
 
     public ArrayList<String> getItemLocation() {return itemLocation; }
+
+    public void assignItem(String item, String location) {
+        if (item.equals("Knife Saver")) {
+            bigMap.get(location).generateItem(new Knife());
+            bigMap.get(location).setCheckItem();
+        }
+        else {
+            bigMap.get(location).generateItem(new WizardFuryTruffle());
+            bigMap.get(location).setCheckItem();
+        }
+    }
+
+    public void assignMonster(String monsters, String location) {
+
+        if (monsters.equals("Cannibal Tribe")) {
+            bigMap.get(location).generateMonster(new CannibalTribe());
+            bigMap.get(location).setCheckMonster();
+        }
+        else if (monsters.equals("Drunk Baboon")) {
+            bigMap.get(location).generateMonster(new DrunkBaboon());
+            bigMap.get(location).setCheckMonster();
+        }
+        else {
+            bigMap.get(location).generateMonster(new Skeleton());
+            bigMap.get(location).setCheckMonster();
+        }
+    }
 
     public void randItem() { //random mushroom and knife into 14 room but not ......
         double rand = Math.random();

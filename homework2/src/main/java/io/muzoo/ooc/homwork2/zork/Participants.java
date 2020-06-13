@@ -27,11 +27,17 @@ public class Participants implements GetProperties {
         this.inventory = new Inventory();
     }
 
-    public Participants(Integer hp, Integer attack, Integer defence, SetRoom location) {
+    public Participants(Integer hp, Integer attack, Integer def, Integer maxHp, SetRoom loc) {
         this.hp = hp;
         this.attack = attack;
-        this.defence = defence;
-        this.location = location;
+        this.maxHp = maxHp;
+        this.defence = def;
+        this.location = loc;
+        this.inventory = new Inventory();
+        knife = new Knife();
+        resurrectionStone = new ResurrectionStone();
+        excaliburSword = new ExcaliburSword();
+        armor = new IronBattleArmor();
     }
 
     @Override

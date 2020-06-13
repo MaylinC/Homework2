@@ -10,20 +10,19 @@ import java.util.Set;
 
 public class GoDirection implements Command {
 
-    private Participants participants;
-    private Map<String, SetRoom> bigMap;
+    private Game game;
 
-    public GoDirection(Participants participants, Map<String, SetRoom> bigMap) {
-        this.participants = participants;
-        this.bigMap = bigMap;
+    public GoDirection(Game game){
+        this.game = game;
     }
 
     @Override
     public void execute(String cmd2) {
-        if (participants.getLocation().getNeighbor(cmd2) != null) {
-            String nextRoom = participants.getLocation().getNeighbor(cmd2);
-            participants.updateLocation(bigMap.get(nextRoom));
+        if (game.getPlayer().getLocation().getNeighbor(cmd2) != null) {
+            String nextRoom = game.getPlayer().getLocation().getNeighbor(cmd2);
+            game.getPlayer().updateLocation(game.getBigMap().get(nextRoom));
             System.out.println(nextRoom);
+            game.setCurrentRoom(nextRoom);
             }
         else {
             System.out.println("Invalid direction");

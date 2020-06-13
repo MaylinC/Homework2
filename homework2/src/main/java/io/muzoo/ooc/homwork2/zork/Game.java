@@ -23,9 +23,10 @@ public class Game {
     private GetCommand command;
     private LimitCommand limitCommand;
     private Participants player;
-    private SetRoom currentRoom;
+    private String currentRoom;
     private SetRoom previousRoom;
     private Boolean defeatedBoss;
+    private Boolean loaded;
 
 
     public Game(CommandFactory commandFactory) {
@@ -36,6 +37,7 @@ public class Game {
         this.defeatedBoss = false;
         this.existGame = false;
         this.mapExist = false;
+        this.loaded = false;
         this.defeatedBoss = false;
         command = new GetCommand();
     }
@@ -63,12 +65,10 @@ public class Game {
         String combine = path + filePath;
         mapCreation = new MapCreation(combine);
         mapCreation.readMap(combine);
-        currentRoom = mapCreation.bigMap.get(mapCreation.startRoom);
+        currentRoom = mapCreation.startRoom;
         commandFactory.getCommandMap().put("map", new MapCommand(mapCreation));
         mapExist = true;
         map = mapCreation.getMap();
-        mapCreation.randMonster();
-        mapCreation.randItem();
         mapCreation.setDeathlyHallow();
         mapCreation.setBoss();
     }
@@ -77,7 +77,15 @@ public class Game {
         return map;
     }
 
-    public SetRoom getCurrentRoom() {
+    public Boolean getLoaded() {
+        return this.loaded;
+    }
+
+    public void setLoaded() {
+        loaded = true;
+    }
+
+    public String getCurrentRoom() {
         return currentRoom;
     }
 
@@ -99,11 +107,6 @@ public class Game {
 
     public Boolean getQuit() {
         return quit;
-    }
-
-    public SetRoom getPreviousRoom() {
-        currentRoom = previousRoom;
-        return previousRoom;
     }
 
     public void setQuit(boolean bol) {
@@ -167,6 +170,10 @@ public class Game {
         return data.toString();
     }
 
+    public void setCurrentRoom(String currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
     public void play() throws IOException {
 
         printWelcome();
@@ -177,6 +184,10 @@ public class Game {
         while(!quit) {
 
             command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "MainMenu");
+            if(mapExist&&!loaded) {  // if not load then spawn monster , if loaded then not spawn
+                mapCreation.randMonster();
+                mapCreation.randItem();
+            }
             while (mapExist||defeatedBoss) {
                 command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "Game");
                 System.out.println(" ");

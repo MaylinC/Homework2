@@ -20,33 +20,35 @@ public class JsonWriter {
         JSONObject mapID = new JSONObject();
         mapID.put("mapID", game.getMapCreation().getMapID());
 
-        JSONObject heroInfo = new JSONObject();
-        heroInfo.put("hp", game.getPlayer().getHp());
-        heroInfo.put("attack", game.getPlayer().getAttack());
-        heroInfo.put("def", game.getPlayer().getDefence());
-        heroInfo.put("sword", game.getPlayer().getExcaliburSword().getFound());
-        heroInfo.put("stone", game.getPlayer().getStone().getFound());
-        heroInfo.put("armor", game.getPlayer().getArmor().getFound());
-        heroInfo.put("knife", game.getPlayer().getKnife().getFound());
-        heroInfo.put("loc", game.getCurrentStringRoom());
-        heroInfo.put("MaxHp", game.getPlayer().getMaxHp());
+        JSONObject playerInfo = new JSONObject();
+        playerInfo.put("hp", game.getPlayer().getHp());
+        playerInfo.put("attack", game.getPlayer().getAttack());
+        playerInfo.put("def", game.getPlayer().getDefence());
+        playerInfo.put("sword", game.getPlayer().getExcaliburSword().getFound());
+        playerInfo.put("stone", game.getPlayer().getStone().getFound());
+        playerInfo.put("armor", game.getPlayer().getArmor().getFound());
+        playerInfo.put("knife", game.getPlayer().getKnife().getFound());
+        playerInfo.put("loc", game.getCurrentRoom());
+        playerInfo.put("MaxHp", game.getPlayer().getMaxHp());
+
 
         JSONObject inventory = new JSONObject();
         inventory.put("numberOfMush", game.getPlayer().getInventory().getCountMushroom());
 
+
         JSONObject monsterLocation = new JSONObject();
         for (String room : game.getMapCreation().getMonsterLocation()) {
-            heroInfo.put(room, game.getCurrentRoom().getMonsters().getName());
+            monsterLocation.put(room, game.getBigMap().get(room).getMonsters().getName());
         }
 
         JSONObject itemLocation = new JSONObject();
         for (String room : game.getMapCreation().getItemLocation()) {
-            heroInfo.put(room, game.getCurrentRoom().getItem().getName());
+            itemLocation.put(room, game.getBigMap().get(room).getItem().getName());
         }
 
         JSONArray main = new JSONArray();
         main.add(mapID);
-        main.add(heroInfo);
+        main.add(playerInfo);
         main.add(inventory);
         main.add(monsterLocation);
         main.add(itemLocation);

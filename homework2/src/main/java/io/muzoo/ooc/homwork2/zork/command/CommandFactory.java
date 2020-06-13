@@ -25,6 +25,8 @@ public class CommandFactory {
         commandMap.put("help", new HelpCommand(commandFactory));
         commandMap.put("auto", new AutopilotCommand(commandFactory));
         commandMap.put("save", new SaveCommand(game));
+        commandMap.put("load", new LoadCommand(game));
+        commandFactory.getCommandMap().put("go", new GoDirection(game));
     }
 
     public Command getCommand(String cmd) {

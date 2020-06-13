@@ -19,6 +19,7 @@ public class LimitCommand {
         menu.add("play");
         menu.add("load");
         menu.add("quit");
+        menu.add("load");
         attack.add("drop");
         attack.add("attack");
         attack.add("eat");

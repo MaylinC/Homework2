@@ -23,7 +23,6 @@ public class Inventory {
     public void takeMushroom(WizardFuryTruffle mushroom) {
         countMushroom += 1;
         bag.add(mushroom);
-        System.out.println("You have added a healing mushroom in your bag");
     }
 
     public void dropMushroom() {
