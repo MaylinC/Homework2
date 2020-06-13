@@ -3,11 +3,11 @@ package io.muzoo.ooc.homwork2.zork.creatures;
 public class Boss extends Monsters {
     public Boss() {
         name = "Basilisk";
-        hp = 650;
-        maxHp = 650;
+        hp = 600;
+        maxHp = 600;
         maxAttack = 65;
         attack = 30;
-        defence = 30;
+        defence = 20;
     }
 
     public Boss(Integer hp, Integer attack, Integer defence) {

@@ -32,8 +32,10 @@ public class LimitCommand {
         duringGame.add("map");
         duringGame.add("info");
         duringGame.add("go");
+        duringGame.add("save");
         duringGame.add("initiateBattle");
         duringGame.add("help");
+        duringGame.add("auto");
         canBeUsedCommand.put("MainMenu", menu);
         canBeUsedCommand.put("Game", duringGame);
         canBeUsedCommand.put("Attack", attack);

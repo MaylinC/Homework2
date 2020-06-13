@@ -30,11 +30,13 @@ public abstract class Monsters {   /// monster and boss
         return this.description;
     }
 
-    public String getName() { return this.name; }
+    public String getName() {
+        return this.name;
+    }
 
     abstract public Integer strike();
 
-    public void updateHP (Integer alterHP) {
-        this.hp = alterHP;
+    public void updateHP(Integer alterHP) {
+            this.hp = alterHP;
+        }
     }
-}

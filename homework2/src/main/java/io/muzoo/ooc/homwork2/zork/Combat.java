@@ -39,6 +39,8 @@ public class Combat {
             System.out.println("What would you want to do?");
             System.out.println("> attack");
             System.out.println("> take");
+            System.out.println("> leave");
+            System.out.println("> eat");
 
             command.getCommand(parser, commandFactory, limitCommand.getCanBeUsedCommand(), "Attack");
 
@@ -49,21 +51,20 @@ public class Combat {
 
             if (monster.getName().equals("Cannibal Tribe")) {
                 Integer damageTaken = monster.strike();
+                System.out.println("damageTaken" + damageTaken);
                 Integer currentHp = player.getHp() - damageTaken;
-                System.out.println("Your current HP: " + currentHp);
                 currentHp += 2;
-                if (player.getHp() < player.getMaxHp()) {
-                    player.updateHP(currentHp);
-                }
+                player.updateHP(currentHp);
+                System.out.println("Your current HP: " + currentHp);
+
+
             } else {
                 Integer damageTaken = monster.strike();
                 double defencePercent = Math.toIntExact(Math.round(1 - (double) player.getDefence() / 100)); // so attack will hit 70% if defence is 30%
                 Integer currentHp = (player.getHp() - (damageTaken * (int) defencePercent));
-                System.out.println("Your current HP: " + currentHp);
                 currentHp += 2;
-                if (player.getHp() < player.getMaxHp()) {
-                    player.updateHP(currentHp);
-                }
+                player.updateHP(currentHp);
+                System.out.println("Your current HP: " + currentHp);
             }
             if (monster.getHp() <= 0) {
                 System.out.println("you defeated " + monster.getName());

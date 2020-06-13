@@ -23,6 +23,8 @@ public class CommandFactory {
         commandMap.put("quit", new QuitCommand(game));
         commandMap.put("play", new PlayCommand(game,commandFactory));
         commandMap.put("help", new HelpCommand(commandFactory));
+        commandMap.put("auto", new AutopilotCommand(commandFactory));
+        commandMap.put("save", new SaveCommand(game));
     }
 
     public Command getCommand(String cmd) {

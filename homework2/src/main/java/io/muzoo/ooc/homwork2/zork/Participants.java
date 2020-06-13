@@ -90,12 +90,20 @@ public class Participants implements GetProperties {
     }
 
     public void updateHP (Integer alterHP) {
-        this.hp = alterHP;
+        if (hp < maxHp) {
+            this.hp = alterHP;
+        }
+        else {
+            this.maxHp = alterHP;
+            this.hp = alterHP;
+        }
     }
 
     public void updateAttack (Integer alterAttack) {
         this.attack = alterAttack;
     }
+
+    public void updateDefence (Integer alterDefence) {this.defence = alterDefence; }
 
     public SetRoom getLocation() {
         return location;

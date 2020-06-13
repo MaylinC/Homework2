@@ -23,7 +23,7 @@ public class CannibalTribe extends Monsters {
             return attack;
         }
         else {
-            System.out.println("Cannibal Tribe drank out your blood, your hp lower by 13 point");
+            System.out.println("Cannibal Tribe drank out your blood");
             return 13;
         }
     }

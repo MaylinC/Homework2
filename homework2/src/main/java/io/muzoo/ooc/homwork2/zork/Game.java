@@ -46,6 +46,7 @@ public class Game {
             if(monster.getName().equals("Basilisk")) {
                 if (monster.getHp() <= 0) {
                     defeatedBoss = true;
+                    System.out.println("You have Defeated the Boss, Congratulation!!!");
                     player.getLocation().takeOutMonster();
                 }
             }
@@ -63,7 +64,6 @@ public class Game {
         mapCreation = new MapCreation(combine);
         mapCreation.readMap(combine);
         currentRoom = mapCreation.bigMap.get(mapCreation.startRoom);
-        mapId = mapCreation.mapId;
         commandFactory.getCommandMap().put("map", new MapCommand(mapCreation));
         mapExist = true;
         map = mapCreation.getMap();
@@ -90,7 +90,7 @@ public class Game {
     }
 
     public void existGame() {
-        mapExist = false;
+        mapExist = true;
     }
 
     public void quiteGame() {
@@ -177,15 +177,13 @@ public class Game {
         while(!quit) {
 
             command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "MainMenu");
-
             while (mapExist||defeatedBoss) {
-
                 command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "Game");
                 System.out.println(" ");
                 System.out.println(currentLocationData());
                 bossDeathYet();
                 if (player.getHp() <= 0) {
-                    System.out.println("You loss and been defeated by Basilisk!!");
+                    System.out.println("You loss!!! Try a new game");
                     mapExist = false;
                 }
             }

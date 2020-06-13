@@ -47,6 +47,7 @@ public class Inventory {
             DeathlyItem mushroom = bag.get(bag.size() - 1);
             countMushroom -= 1;
             bag.remove(bag.size() - 1);
+            System.out.println("Your HP is increase by 5");
             return mushroom.getGainHp();
 
         } else {

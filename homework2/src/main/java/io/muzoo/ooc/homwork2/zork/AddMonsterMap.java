@@ -18,6 +18,8 @@ public abstract class AddMonsterMap {
     public String mapId;
     public Map<String, SetRoom> bigMap = new HashMap<String, SetRoom>();
     public ArrayList<String> lstRoom = new ArrayList<>(); // get list of 20 rooms out
+    public ArrayList<String> monsterLocation = new ArrayList<>();
+    public ArrayList<String> itemLocation = new ArrayList<>();
 
 //    public String checkMapFile() {
 //        if (getFirstLine.equals("ID:Map1")) {
@@ -45,36 +47,42 @@ public abstract class AddMonsterMap {
 
     public void randMonster() { //random monster into 10 room but not in abyss
         double rand = Math.random();
-        ArrayList<String> rmLst = randRoom(11);  // 11 room
+        monsterLocation = randRoom(11);  // 11 room
         for (int num = 0; num < 11; num++) { //0-10;
-            if (!rmLst.get(num).equals("abyssToHell")) {
+            if (!monsterLocation.get(num).equals("abyssToHell")) {
                 if (rand <= 0.33) {
-                    bigMap.get(rmLst.get(num)).generateMonster(new Skeleton());
-                    bigMap.get(rmLst.get(num)).setCheckMonster();
+                    bigMap.get(monsterLocation.get(num)).generateMonster(new Skeleton());
+                    bigMap.get(monsterLocation.get(num)).setCheckMonster();
                 } else if (rand <= 0.66) {
-                    bigMap.get(rmLst.get(num)).generateMonster(new DrunkBaboon());
-                    bigMap.get(rmLst.get(num)).setCheckMonster();
+                    bigMap.get(monsterLocation.get(num)).generateMonster(new DrunkBaboon());
+                    bigMap.get(monsterLocation.get(num)).setCheckMonster();
                 } else {
-                    bigMap.get(rmLst.get(num)).generateMonster(new CannibalTribe());
-                    bigMap.get(rmLst.get(num)).setCheckMonster();
+                    bigMap.get(monsterLocation.get(num)).generateMonster(new CannibalTribe());
+                    bigMap.get(monsterLocation.get(num)).setCheckMonster();
                 }
             }
         }
     }
 
+    public ArrayList<String> getMonsterLocation() {
+        return monsterLocation;
+    }
+
+    public ArrayList<String> getItemLocation() {return itemLocation; }
+
     public void randItem() { //random mushroom and knife into 14 room but not ......
         double rand = Math.random();
-        ArrayList<String> rmLst = randRoom(14);
+        itemLocation = randRoom(14);
         for (int num = 0; num < 14; num++) {
-            if (!rmLst.get(num).equals("abyssToHell") && !rmLst.get(num).equals("crazyMazed")
-                    && !rmLst.get(num).equals("the7Seas") && !rmLst.get(num).equals("bloodStream")) {
-                if(rand <= 0.70) {
-                    bigMap.get(rmLst.get(num)).generateItem(new WizardFuryTruffle());
-                    bigMap.get(rmLst.get(num)).setCheckItem();
+            if (!itemLocation.get(num).equals("abyssToHell") && !itemLocation.get(num).equals("crazyMazed")
+                    && !itemLocation.get(num).equals("the7Seas") && !itemLocation.get(num).equals("bloodStream")) {
+                if(rand <= 0.75) {
+                    bigMap.get(itemLocation.get(num)).generateItem(new WizardFuryTruffle());
+                    bigMap.get(itemLocation.get(num)).setCheckItem();
                 }
                 else {
-                    bigMap.get(rmLst.get(num)).generateItem(new Knife());
-                    bigMap.get(rmLst.get(num)).setCheckItem();
+                    bigMap.get(itemLocation.get(num)).generateItem(new Knife());
+                    bigMap.get(itemLocation.get(num)).setCheckItem();
                 }
             }
         }

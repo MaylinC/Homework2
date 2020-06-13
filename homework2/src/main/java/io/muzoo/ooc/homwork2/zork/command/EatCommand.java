@@ -15,7 +15,6 @@ public class EatCommand implements Command{
     public void execute(String arg) {
         Integer hp = participants.getInventory().getMushroom();
         participants.updateHP(participants.getHp() + hp);
-        System.out.println("Your HP is increase by 2");
     }
 
     @Override
