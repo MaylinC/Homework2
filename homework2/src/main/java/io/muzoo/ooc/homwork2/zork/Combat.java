@@ -68,6 +68,7 @@ public class Combat {
             }
             if (monster.getHp() <= 0) {
                 System.out.println("you defeated " + monster.getName());
+                player.getLocation().takeOutMonster();
             }
             if (player.getHp() <= 0) {
                 System.out.println("you get defeated by " + monster.getName());

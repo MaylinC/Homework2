@@ -17,13 +17,17 @@ public class InitiateBattleCommand implements Command {
         this.limitCommand = limitCommand;
     }
     @Override
-    public void execute(String arg) throws IOException {
+    public void execute(String arg) {
         if(participants.getLocation().getCheckMonster()) {
             Monsters monster = participants.getLocation().getMonsters();
             Combat combat = new Combat(participants,monster,commandFactory,limitCommand);
             commandFactory.getCommandMap().put("attack", new AttackCommand(participants, monster)); // create attack command whenInitiateBattleCommand are called
             commandFactory.getCommandMap().put("leave", new LeaveBattleCommand(combat));
-            combat.battle();
+            try {
+                combat.battle();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else {
             System.out.println("No monsters appear in this room");

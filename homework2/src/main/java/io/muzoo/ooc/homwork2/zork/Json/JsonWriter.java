@@ -38,12 +38,16 @@ public class JsonWriter {
 
         JSONObject monsterLocation = new JSONObject();
         for (String room : game.getMapCreation().getMonsterLocation()) {
-            monsterLocation.put(room, game.getBigMap().get(room).getMonsters().getName());
+            if(game.getBigMap().get(room).getMonsters()!=null) {
+                monsterLocation.put(room, game.getBigMap().get(room).getMonsters().getName());
+            }
         }
 
         JSONObject itemLocation = new JSONObject();
         for (String room : game.getMapCreation().getItemLocation()) {
-            itemLocation.put(room, game.getBigMap().get(room).getItem().getName());
+            if(game.getBigMap().get(room).getItem()!=null) {
+                itemLocation.put(room, game.getBigMap().get(room).getItem().getName());
+            }
         }
 
         JSONArray main = new JSONArray();
@@ -53,7 +57,7 @@ public class JsonWriter {
         main.add(monsterLocation);
         main.add(itemLocation);
 
-        try (FileWriter file = new FileWriter("/Users/maylin/Desktop/ooc/homework2/src/main/resources/" + name + ".json")) {
+        try (FileWriter file = new FileWriter("../homework2/src/main/resources/" + name + ".json")) {
             file.write(main.toJSONString());
             file.flush();
         } catch (IOException e) {

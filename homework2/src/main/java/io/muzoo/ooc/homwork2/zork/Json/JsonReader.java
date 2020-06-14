@@ -22,7 +22,7 @@ public class JsonReader {
     }
 
     public void reader(String name) { // just open and read file
-        String defaultPath = "/Users/maylin/Desktop/ooc/homework2/src/main/resources/";
+        String defaultPath = "../homework2/src/main/resources/";
         String path = defaultPath + name + ".json";
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader(path)) { //Read JSON file
@@ -45,6 +45,7 @@ public class JsonReader {
                 Math.toIntExact((Long) playerInfo.get("def")),
                 Math.toIntExact((Long) playerInfo.get("MaxHp")),
                 game.getBigMap().get((String) playerInfo.get("loc")));
+        game.setPlayer(participants);
         if ((boolean) playerInfo.get("sword")) {
             game.getPlayer().setFoundSword();
         }
@@ -58,7 +59,6 @@ public class JsonReader {
             game.getPlayer().getKnife().setFound();
         }
 
-        game.setPlayer(participants);
 
         JSONObject inventoryInfo = (JSONObject) jsonArray.get(2);
 

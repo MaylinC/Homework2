@@ -18,9 +18,13 @@ public class PlayCommand implements Command {
     }
 
     @Override
-    public void execute(String arg) throws IOException {
+    public void execute(String arg)  {
         if (arg.equals("Map1")) {
-            game.chooseMap(arg);
+            try {
+                game.chooseMap(arg);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             beginRoom = game.getBigMap().get(game.getCurrentStringRoom());
             System.out.println("Map is build");
             Participants participants = new Participants();

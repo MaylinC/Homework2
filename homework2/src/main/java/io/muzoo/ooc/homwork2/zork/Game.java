@@ -17,14 +17,11 @@ public class Game {
     private Boolean mapExist;
     private Boolean existGame;
     private Parser parser;
-    private String mapId;
-    private Integer count;
     private Map<String,SetRoom> map;
     private GetCommand command;
     private LimitCommand limitCommand;
     private Participants player;
     private String currentRoom;
-    private SetRoom previousRoom;
     private Boolean defeatedBoss;
     private Boolean loaded;
 
@@ -45,23 +42,18 @@ public class Game {
     public void bossDeathYet() {
         if(player.getLocation().getCheckMonster()) {
             Monsters monster = player.getLocation().getMonsters();
-            if(monster.getName().equals("Basilisk")) {
-                if (monster.getHp() <= 0) {
+            if (monster.getHp() <= 0) {
+                if(monster.getName().equals("Basilisk")) {
                     defeatedBoss = true;
                     System.out.println("You have Defeated the Boss, Congratulation!!!");
-                    player.getLocation().takeOutMonster();
                 }
-            }
-            else {
-                if (monster.getHp() <= 0) {
-                    player.getLocation().takeOutMonster();
-                }
+                player.getLocation().takeOutMonster();
             }
         }
     }
 
     public void chooseMap(String filePath) throws IOException {
-        String path = "/Users/maylin/Desktop/ooc/homework2/src/main/resources/";
+        String path = "../homework2/src/main/resources/";
         String combine = path + filePath;
         mapCreation = new MapCreation(combine);
         mapCreation.readMap(combine);
@@ -98,7 +90,7 @@ public class Game {
     }
 
     public void existGame() {
-        mapExist = true;
+        mapExist = false;
     }
 
     public void quiteGame() {
@@ -174,7 +166,7 @@ public class Game {
         this.currentRoom = currentRoom;
     }
 
-    public void play() throws IOException {
+    public void play() {
 
         printWelcome();
 
@@ -183,19 +175,28 @@ public class Game {
 
         while(!quit) {
 
-            command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "MainMenu");
+            try {
+                command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "MainMenu");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             if(mapExist&&!loaded) {  // if not load then spawn monster , if loaded then not spawn
                 mapCreation.randMonster();
                 mapCreation.randItem();
             }
-            while (mapExist||defeatedBoss) {
-                command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "Game");
+            while (mapExist && !defeatedBoss) {
                 System.out.println(" ");
                 System.out.println(currentLocationData());
                 bossDeathYet();
                 if (player.getHp() <= 0) {
                     System.out.println("You loss!!! Try a new game");
                     mapExist = false;
+                }
+
+                try {
+                    command.getCommand(parser,commandFactory, limitCommand.getCanBeUsedCommand(), "Game");
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }

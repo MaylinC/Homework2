@@ -53,10 +53,9 @@ public class AttackCommand implements Command{
 
             System.out.println("You attacked a " + monster.getName());
             double defencePercent = Math.toIntExact(Math.round(1 - (double) monster.getDefence() / 100));
-            Integer monsterCurrentHp = (monster.getHp() - (damageDealt() * (int) defencePercent));
+            Integer monsterCurrentHp = (monster.getHp() - Math.toIntExact(Math.round(participants.getAttack() * (int) defencePercent)));
             monster.updateHP(monsterCurrentHp);
             System.out.println(monster.getName() + "'s current HP: " + monsterCurrentHp);
-            participants.updateAttack(participants.getAttack() - participants.getKnife().getAttackDamage());
         }
 
         else {
@@ -75,3 +74,4 @@ public class AttackCommand implements Command{
         return this.description;
     }
 }
+
